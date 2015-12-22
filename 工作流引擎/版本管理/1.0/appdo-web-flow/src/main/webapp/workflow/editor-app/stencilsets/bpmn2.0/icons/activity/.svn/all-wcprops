@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/editor-app/stencilsets/bpmn2.0/icons/activity
+END
+task.png
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/editor-app/stencilsets/bpmn2.0/icons/activity/task.png
+END
+event.subprocess.collapsed.png
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/editor-app/stencilsets/bpmn2.0/icons/activity/event.subprocess.collapsed.png
+END
+subprocess.png
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/editor-app/stencilsets/bpmn2.0/icons/activity/subprocess.png
+END
+event.subprocess.png
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/editor-app/stencilsets/bpmn2.0/icons/activity/event.subprocess.png
+END
+expanded.subprocess.png
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/editor-app/stencilsets/bpmn2.0/icons/activity/expanded.subprocess.png
+END

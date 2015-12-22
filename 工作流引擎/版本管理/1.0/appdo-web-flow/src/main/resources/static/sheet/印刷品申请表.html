@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+	h2{
+		text-align: center;
+	}
+	.main{
+		width: 660px;
+		border: 2px #000 solid;
+		border-collapse: collapse;
+		font-size: 14px;
+		font-family: "微软雅黑";
+		text-align: center;
+		margin: 0 auto;
+	}
+	input{
+		border: none;
+		font-size: 14px;
+		outline: none;
+		text-align: center;
+		font-family: "微软雅黑";
+	}
+	.main td{
+		border: 1px #000 solid;
+		height: 45px;
+		width: 16%;
+		border-spacing: 0;
+	}
+	.main tr{
+		width: 100%;
+	}
+	/* .main td input,.main td label{
+		float: left;
+		margin-left: 10px;
+		margin-top: 10px;
+	} */
+	.font0{
+		font-size: 0;
+	}
+	.font0 input,.font0 label{
+		font-size: 14px;
+		margin-right: 10px;
+		vertical-align: middle;
+	}
+	textarea{
+		width:96%;
+		height:90%;
+		resize:none;
+		border:none;
+		outline:none;
+		font-family: "微软雅黑";
+		font-size:14px;
+	}
+	.sugdate input{
+		width: 35px;
+	}
+</style>
+<link rel="stylesheet" href="../../../static/sheet/bootstrap.min.css">
+<script type="text/javascript" src="../../../static/sheet/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../../../static/sheet/bootstrap.min.js"></script>
+</head>
+<body>
+	<h2>印刷品申请表</h2>
+	<div style="font-size:12px;padding-left:400px;text-align:center">编号：<input name="" type="text"  value="" style="width:100px;text-align:left"></div>
+	<table class="main">
+		<tr>
+			<td style="width:15%">申请部门</td>
+			<td style="width:15%"><input  name="" type="text" title="申请部门" value="" style="width:97%"></td>
+			<td style="width:15%">申请人</td>
+			<td style="width:20%"><input name="" type="text" title="申请人" value="" style="width:97%"></td>
+			<td style="width:15%">申请日期</td>
+			<td style="width:15%"><input name="" type="text"  value="" style="width:97%"></td>
+		</tr>
+		<tr>
+			<td style="width:15%;height:150px">申请理由</td>
+			<td colspan="5">
+				<textarea title="" name="" value=""></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" style="padding:0;">
+				<table style="width:100%;border-collapse:collapse">
+					<tr>
+						<td style="width:35%;border-top:none;border-left:none">产品名称</td>
+						<td style="width:15%;border-top:none">材质</td>
+						<td style="width:15%;border-top:none">规格型号</td>
+						<td style="width:15%;border-top:none">数量</td>
+						<td style="width:20%;border-top:none;border-right:none">预计单价(元)</td>
+					</tr>
+					<tr>
+						<td style="width:35%;border-left:none"><input name="" type="text"  value="" style="width:97%"></td>
+						<td style="width:15%"><input name="" type="text"  value="" style="width:97%"></td>
+						<td style="width:15%"><input name="" type="text"  value="" style="width:97%"></td>
+						<td style="width:15%"><input name="" type="text"  value="" style="width:97%"></td>
+						<td style="width:20%;border-right:none"><input name="" type="text"  value="" style="width:97%"></td>
+					</tr>
+					<tr>
+						<td style="width:35%;border-left:none"><input name="" type="text"  value="" style="width:97%"></td>
+						<td style="width:15%"><input name="" type="text"  value="" style="width:97%"></td>
+						<td style="width:15%"><input name="" type="text"  value="" style="width:97%"></td>
+						<td style="width:15%"><input name="" type="text"  value="" style="width:97%"></td>
+						<td style="width:20%;border-right:none"><input name="" type="text"  value="" style="width:97%"></td>
+					</tr>
+					<tr>
+						<td style="width:35%;border-left:none;border-bottom:none"><input name="" type="text"  value="" style="width:97%"></td>
+						<td style="width:15%;border-bottom:none"><input name="" type="text"  value="" style="width:97%"></td>
+						<td style="width:15%;border-bottom:none"><input name="" type="text"  value="" style="width:97%"></td>
+						<td style="width:15%;border-bottom:none"><input name="" type="text"  value="" style="width:97%"></td>
+						<td style="width:20%;border-bottom:none;border-right:none"><input name="" type="text"  value="" style="width:97%"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" style="padding:0;">
+				<table style="width:100%;border-collapse:collapse">
+					<tr>
+						<td style="width:25%;border-top:none;border-left:none">合计</td>
+						<td style="width:75%;border-top:none;border-right:none"><input name="" type="text" value="" style="width:96%;text-align:left"></td>
+					</tr>
+					<tr>
+						<td style="height:70px;border-left:none">备注</td>
+						<td style="border-right:none"><input name="" type="text" value="" style="width:96%;text-align:left"></td>
+					</tr>
+					<tr>
+						<td style="height:110px;border-left:none">部门领导<br>意见</td>
+						<td class="sugdate" style="border-right:none">
+							<textarea name="" value="" style="height:65%"></textarea>
+							<div style="float:right;margin-right:60px;"><input type="text" name="">年<input type="text" name="">月<input type="text" name="">日</div>
+						</td>
+					</tr>
+					<tr>
+						<td style="height:110px;border-left:none">行政部<br>意见</td>
+						<td class="sugdate" style="border-right:none">
+							<textarea name="" value="" style="height:65%"></textarea>
+							<div style="float:right;margin-right:60px;"><input type="text" name="">年<input type="text" name="">月<input type="text" name="">日</div>
+						</td>
+					</tr>
+					<tr>
+						<td style="height:110px;border-bottom:none;border-left:none">总经理<br>批示</td>
+						<td class="sugdate" style="border-bottom:none;border-right:none">
+							<textarea name="" value="" style="height:65%"></textarea>
+							<div style="float:right;margin-right:60px;"><input type="text" name="">年<input type="text" name="">月<input type="text" name="">日</div>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

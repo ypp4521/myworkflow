@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.zywx.appdo.meta.dao.impl.MetaCustomDaoImpl">
+	<resultMap id="BaseResultMap" type="org.zywx.appdo.meta.entity.MetaCustom">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="metaname" property="metaname" jdbcType="VARCHAR" />
+		<result column="metacode" property="metacode" jdbcType="VARCHAR" />
+		<result column="classpath" property="classpath" jdbcType="VARCHAR" />
+		<result column="metaService" property="metaService" jdbcType="VARCHAR" />
+		<result column="functionid" property="functionid" jdbcType="VARCHAR" />
+		<result column="parentid" property="parentid" jdbcType="VARCHAR" />
+		<result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+		<result column="remark" property="remark" jdbcType="VARCHAR" />
+		<result column="tenantId" property="tenantId" jdbcType="VARCHAR" />
+		<result column="querymethod" property="querymethod" jdbcType="VARCHAR" />
+		<result column="busipath" property="busipath" jdbcType="VARCHAR" />
+		<result column="isapp" property="isapp" jdbcType="VARCHAR" />
+		<result column="year" property="year" jdbcType="VARCHAR" />
+		<result column="userId" property="userId" jdbcType="VARCHAR" />
+		<result column="userName" property="userName" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, metaname, metacode, classpath, metaService, functionid,
+		parentid,
+		createtime,
+		remark, tenantId, querymethod,year,userId,userName
+	</sql>
+	<insert id="insert" parameterType="org.zywx.appdo.meta.entity.MetaCustom"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into meta_custom (metaname,
+		metacode, classpath,
+		metaService, functionid, parentid,
+		createtime,
+		remark, tenantId,
+		querymethod,year,userId,userName)
+		values (#{metaname,jdbcType=VARCHAR},
+		#{metacode,jdbcType=VARCHAR},
+		#{classpath,jdbcType=VARCHAR},
+		#{metaService,jdbcType=VARCHAR}, #{functionid,jdbcType=VARCHAR},
+		#{parentid,jdbcType=VARCHAR},
+		#{createtime,jdbcType=TIMESTAMP},
+		#{remark,jdbcType=VARCHAR},
+		#{tenantId,jdbcType=VARCHAR},
+		#{querymethod,jdbcType=VARCHAR},
+		#{year,jdbcType=VARCHAR},
+		#{userId,jdbcType=VARCHAR},
+		#{userName,jdbcType=VARCHAR})
+	</insert>
+	<insert id="batchInsert" parameterType="java.util.List">
+		insert into meta_custom (metaname, metacode, classpath,
+		metaService,
+		functionid, parentid,
+		createtime, remark, tenantId,
+		querymethod,year,userId,userName)values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.metaname,jdbcType=VARCHAR},
+			#{item.metacode,jdbcType=VARCHAR},
+			#{item.classpath,jdbcType=VARCHAR},
+			#{item.metaService,jdbcType=VARCHAR},
+			#{item.functionid,jdbcType=VARCHAR},
+			#{item.parentid,jdbcType=VARCHAR},
+			#{item.createtime,jdbcType=TIMESTAMP},
+			#{item.remark,jdbcType=VARCHAR}, 
+			#{item.tenantId,jdbcType=VARCHAR},
+			#{item.querymethod,jdbcType=VARCHAR},
+			#{item.year,jdbcType=VARCHAR},
+			#{item.userId,jdbcType=VARCHAR},
+			#{item.userName,jdbcType=VARCHAR})
+		</foreach>
+	</insert>
+	<update id="update" parameterType="org.zywx.appdo.meta.entity.MetaCustom">
+		update meta_custom
+		set metaname
+		= #{metaname,jdbcType=VARCHAR},
+		metacode =
+		#{metacode,jdbcType=VARCHAR},
+		classpath =
+		#{classpath,jdbcType=VARCHAR},
+		metaService =
+		#{metaService,jdbcType=VARCHAR},
+		functionid =
+		#{functionid,jdbcType=VARCHAR},
+		parentid =
+		#{parentid,jdbcType=VARCHAR},
+		createtime =
+		#{createtime,jdbcType=TIMESTAMP},
+		remark = #{remark,jdbcType=VARCHAR},
+		querymethod = #{querymethod,jdbcType=VARCHAR},
+		year = #{year,jdbcType=VARCHAR},
+		userId = #{userId,jdbcType=VARCHAR},
+		userName = #{userName,jdbcType=VARCHAR}
+		where id =
+		#{id,jdbcType=INTEGER}
+		and tenantId = #{tenantId,jdbcType=VARCHAR}
+	</update>
+	<delete id="deleteById" parameterType="java.util.Map">
+		delete from meta_custom
+		where id = #{id,jdbcType=INTEGER}
+		and tenantId =
+		#{tenantId,jdbcType=VARCHAR}
+	</delete>
+	<delete id="deleteByIds" parameterType="java.util.Map">
+		delete from meta_custom where tenantId = #{tenantId,jdbcType=BIGINT}
+		AND id IN
+		<foreach collection="list" item="item" index="index" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+	<delete id="deleteByConditions" parameterType="java.util.Map">
+		delete from meta_custom
+		<where>
+			<include refid="conditionSql" />
+		</where>
+	</delete>
+	<select id="getById" resultMap="BaseResultMap" parameterType="java.util.Map">
+		select * from meta_custom
+		where id = #{id,jdbcType=INTEGER}
+		and tenantId
+		= #{tenantId,jdbcType=VARCHAR}
+	</select>
+	<select id="getByIds" resultMap="BaseResultMap" parameterType="java.util.Map">
+		select * from meta_custom where tenantId = #{tenantId,jdbcType=BIGINT}
+		AND id IN
+		<foreach collection="list" item="item" index="index" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+	<select id="getPage" resultMap="BaseResultMap" parameterType="java.util.Map">
+		select * from meta_custom
+		<where>
+			<include refid="conditionSql" />
+		</where>
+		order by ${sort} ${dir}
+	</select>
+	<select id="getByMap" resultMap="BaseResultMap" parameterType="java.util.Map">
+		select * from meta_custom
+		<where>
+			<include refid="conditionSql" />
+		</where>
+		order by ${sort} ${dir}
+	</select>
+	<sql id="conditionSql">
+		<if test="metaname != null and  metaname != '' ">
+			and metaname = #{metaname}
+		</if>
+		<if test="metacode != null and  metacode != '' ">
+			and metacode = #{metacode}
+		</if>
+		<if test="classpath != null and  classpath != '' ">
+			and classpath = #{classpath}
+		</if>
+		<if test="metaService != null and  metaService != '' ">
+			and metaService = #{metaService}
+		</if>
+		<if test="functionid != null and  functionid != '' ">
+			and functionid = #{functionid}
+		</if>
+		<if test="parentid != null and  parentid != '' ">
+			and parentid = #{parentid}
+		</if>
+		<if test="createtime != null and  createtime != '' ">
+			and createtime = #{createtime}
+		</if>
+		<if test="remark != null and  remark != '' ">
+			and remark = #{remark}
+		</if>
+		<if test="tenantId != null and  tenantId != '' ">
+			and tenantId = #{tenantId}
+		</if>
+		<if test="querymethod != null and  querymethod != '' ">
+			and querymethod = #{querymethod}
+		</if>
+	</sql>
+</mapper>

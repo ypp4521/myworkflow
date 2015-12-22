@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+	h2{
+		text-align: center;
+	}
+	.main{
+		width: 660px;
+		border: 2px #000 solid;
+		border-collapse: collapse;
+		font-size: 14px;
+		font-family: "微软雅黑";
+		text-align: center;
+		margin: 0 auto;
+	}
+	input{
+		border: none;
+		font-size: 14px;
+		outline: none;
+		text-align: center;
+		font-family: "微软雅黑";
+	}
+	.main td{
+		border: 1px #000 solid;
+		height: 40px;
+	}
+	.main tr{
+		width: 100%;
+	}
+	.font0{
+		font-size: 0;
+	}
+	.font0 input,.font0 label{
+		font-size: 14px;
+		margin-right: 10px;
+		vertical-align: middle;
+	}
+	.leavedate input{
+		width: 35px;
+		border: none;
+		border-bottom: 1px solid #000;
+		outline: none;
+		text-align: right;
+
+	}
+	#otherreason{
+		width: 100px;
+		border: none;
+		border-bottom: 1px solid #000;
+		outline: none;
+		text-align: left;
+	}
+	textarea{
+		width:96%;
+		height:90%;
+		resize:none;
+		border:none;
+		outline:none;
+		font-family: "微软雅黑";
+		font-size:14px;
+	}
+	.salary input{
+		width: 50px;
+		border-bottom: 1px solid #000;
+	}
+</style>
+<link rel="stylesheet" href="../../../static/sheet/bootstrap.min.css">
+<script type="text/javascript" src="../../../static/sheet/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../../../static/sheet/bootstrap.min.js"></script>
+</head>
+<body>
+	<h2>员工异动申请表</h2>
+	<div style="font-size:12px;padding-left:400px;text-align:center">编号：<input name="" type="text" title="申请日期" value="" style="width:100px;text-align:left"></div>
+	<table class="main">
+		<tr>
+			<td style="width:10%">申请人</td>
+			<td style="width:14%"><input name="" type="text" value="" style="width:98%"></td>
+			<td style="width:10%">部门</td>
+			<td><input name="" type="text" value="" style="width:98%"></td>
+			<td style="width:10%">职位</td>
+			<td style="width:14%"><input name="" type="text" value="" style="width:98%"></td>
+			<td style="width:10%">员工编号</td>
+			<td style="width:14%"><input name="" type="text" value="" style="width:98%"></td>
+		</tr>
+		<tr>
+			<td style="width:10%">出生日期</td>
+			<td style="width:14%"><input name="" type="text" value="" style="width:98%"></td>
+			<td style="width:10%">学历</td>
+			<td><input name="" type="text" value="" style="width:98%"></td>
+			<td style="width:10%">专业</td>
+			<td style="width:14%"><input name="" type="text" value="" style="width:98%"></td>
+			<td style="width:10%">入职日期</td>
+			<td style="width:14%"><input name="" type="text" value="" style="width:98%"></td>
+		</tr>
+		<tr>
+			<td>请假类型</td>
+			<td colspan="7" class="font0">
+				<input type="checkbox" id="check1" name="" value=""><label for="check1">晋升</label>
+				<input type="checkbox" id="check2" name="" value=""><label for="check2">降职</label>　　
+				<input type="checkbox" id="check3" name="" value=""><label for="check3">调职</label>　　
+				<input type="checkbox" id="check4" name="" value=""><label for="check4">调薪</label>　　
+				<input type="checkbox" id="check5" name="" value=""><label for="check5">其他 <input type="text" id="otherreason"></label>　　　　　
+			</td>
+		</tr>
+		<tr>
+			<td style="width:10%">申请原因</td>
+			<td colspan="7" style="height:70px;"><textarea name="" value=""></textarea></td>
+		</tr>
+		<tr>
+			<td colspan="8" style="height:70px;padding:0;">
+				<table style="border-collapse: collapse;width:100%">
+					<tr>
+						<td rowspan="10" style="width:10%;border:none">调整情况</td>
+						<td rowspan="4" style="width:10%;border-top:none">调整前</td>
+						<td style="border-top:none">任职地点</td>
+						<td colspan="2" style="border-top:none;border-right:none"><input name="" type="text" value="" style="width:96%;text-align:left"></td>
+					</tr>
+					<tr>
+						<td style="width:10%">任职部门</td>
+						<td colspan="2"><input name="" type="text" value="" style="width:96%;text-align:left"></td>
+					</tr>
+					<tr>
+						<td style="width:10%">任职岗位</td>
+						<td colspan="2"><input name="" type="text" value="" style="width:96%;text-align:left"></td>
+					</tr>
+					<tr>
+						<td style="width:10%">薪酬结构</td>
+						<td colspan="2" class="salary">
+							薪资总额<input name="" type="text" value="" style="">
+							基本薪资<input name="" type="text" value="" style="">
+							绩效工资<input name="" type="text" value="" style="">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" style="padding-left:10px">部门领导： <input name="" type="text" value="" style="width:70%;text-align:left"></td>
+						<td style="width:45%;padding-left:10px">直属副总： <input name="" type="text" value="" style="width:70%;text-align:left"></td>
+					</tr>
+					<tr>
+						<td rowspan="4" style="width:10%">调整后</td>
+						<td>任职地点</td>
+						<td colspan="2"><input name="" type="text" value="" style="width:96%;text-align:left"></td>
+					</tr>
+					<tr>
+						<td style="width:10%">任职部门</td>
+						<td colspan="2"><input name="" type="text" value="" style="width:96%;text-align:left"></td>
+					</tr>
+					<tr>
+						<td style="width:10%">任职岗位</td>
+						<td colspan="2"><input name="" type="text" value="" style="width:96%;text-align:left"></td>
+					</tr>
+					<tr>
+						<td style="width:10%">薪酬结构</td>
+						<td colspan="2" class="salary">
+							薪资总额<input name="" type="text" value="" style="">
+							基本薪资<input name="" type="text" value="" style="">
+							绩效工资<input name="" type="text" value="" style="">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" style="padding-left:10px;border-bottom:none">部门领导： <input name="" type="text" value="" style="width:70%;text-align:left"></td>
+						<td style="width:45%;padding-left:10px;border-bottom:none">直属副总： <input name="" type="text" value="" style="width:70%;text-align:left"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">人力资源部意见</td>
+			<td colspan="6"><input name="" type="text" value="" style="width:98%;text-align:left"></td>
+		</tr>
+		<tr>
+			<td colspan="2">总经理批示</td>
+			<td colspan="6"><input name="" type="text" value="" style="width:98%;text-align:left"></td>
+		</tr>
+		<tr>
+			<td colspan="2">生效日期</td>
+			<td colspan="2"><input name="" type="text" value="" style="width:95%;text-align:left"></td>
+			<td colspan="2">员工签字确认</td>
+			<td colspan="2"><input name="" type="text" value="" style="width:95%;text-align:left"></td>
+		</tr>
+	</table>
+</body>
+</html>

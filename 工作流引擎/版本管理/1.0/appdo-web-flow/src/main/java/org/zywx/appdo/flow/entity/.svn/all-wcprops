@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/appdo/!svn/ver/42034/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/entity
+END
+Staff.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/appdo/!svn/ver/40319/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/entity/Staff.java
+END
+BpmApprove.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/appdo/!svn/ver/41054/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/entity/BpmApprove.java
+END
+BpmTodoTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/appdo/!svn/ver/42034/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/entity/BpmTodoTask.java
+END
+BpmTodo.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/appdo/!svn/ver/41745/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/entity/BpmTodo.java
+END
+RunProcessBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/appdo/!svn/ver/41745/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/entity/RunProcessBean.java
+END
+Department.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/appdo/!svn/ver/40319/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/entity/Department.java
+END
+LoginUserInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/appdo/!svn/ver/39721/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/entity/LoginUserInfo.java
+END
+BpmTodoProcInst.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/appdo/!svn/ver/42034/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/entity/BpmTodoProcInst.java
+END

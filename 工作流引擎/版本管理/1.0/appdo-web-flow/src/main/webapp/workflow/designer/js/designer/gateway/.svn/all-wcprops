@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/gateway
+END
+ExclusiveGateway.js
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/gateway/ExclusiveGateway.js
+END
+ParallelGateway.js
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/gateway/ParallelGateway.js
+END
+InclusiveGateway.js
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/gateway/InclusiveGateway.js
+END

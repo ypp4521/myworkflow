@@ -1,0 +1,40 @@
+10
+
+dir
+41642
+http://svn.3g2win.com/svn/appdo/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow
+http://svn.3g2win.com/svn/appdo
+
+
+
+2015-11-20T06:34:49.539708Z
+41056
+pengpeng.yuan
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+942de7de-16d0-4a6e-ba26-731a43b108fe
+
+designer
+dir
+
+diagram
+dir
+
+editor-app
+dir
+
+ueditor
+dir
+

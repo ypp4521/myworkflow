@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/editor-app/stencilsets/bpmn2.0/icons/connector
+END
+messageflow.png
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/editor-app/stencilsets/bpmn2.0/icons/connector/messageflow.png
+END
+association.unidirectional.png
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/editor-app/stencilsets/bpmn2.0/icons/connector/association.unidirectional.png
+END
+association.undirected.png
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/editor-app/stencilsets/bpmn2.0/icons/connector/association.undirected.png
+END
+sequenceflow.png
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/editor-app/stencilsets/bpmn2.0/icons/connector/sequenceflow.png
+END

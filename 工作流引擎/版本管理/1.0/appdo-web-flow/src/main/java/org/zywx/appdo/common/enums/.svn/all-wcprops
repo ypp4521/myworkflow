@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/appdo/!svn/ver/41317/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/common/enums
+END
+IfYesOrNoEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/appdo/!svn/ver/41317/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/common/enums/IfYesOrNoEnum.java
+END
+ApptypeEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/common/enums/ApptypeEnum.java
+END
+DeployStateEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/common/enums/DeployStateEnum.java
+END
+IsAppEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/appdo/!svn/ver/41317/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/common/enums/IsAppEnum.java
+END
+FieldTypeEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/appdo/!svn/ver/42034/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/common/enums/FieldTypeEnum.java
+END
+EnableEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/common/enums/EnableEnum.java
+END
+SingleTypeEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/common/enums/SingleTypeEnum.java
+END
+TodoVarEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/common/enums/TodoVarEnum.java
+END
+FieldTodoEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/common/enums/FieldTodoEnum.java
+END

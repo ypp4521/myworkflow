@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+      http://www.springframework.org/schema/beans 
+      classpath:/org/springframework/beans/factory/xml/spring-beans-3.2.xsd
+      http://www.springframework.org/schema/mvc 
+      classpath:/org/springframework/web/servlet/config/spring-mvc-3.2.xsd
+      http://www.springframework.org/schema/context 
+      classpath:/org/springframework/context/config/spring-context-3.2.xsd">
+
+	<context:component-scan base-package="org.zywx.appdo.*.controller">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+	<!-- 流程设计器和流程图 -->
+	<context:component-scan	base-package="org.activiti.rest.editor,org.activiti.rest.diagram.services">
+	</context:component-scan>
+	
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="order" value="2" />
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="locations">
+			<list>
+				<value>classpath:*.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<mvc:annotation-driven />
+	<mvc:view-controller path="/" view-name="index" />
+	<mvc:resources location="file:./src/main/resources/static/,classpath:/static/"
+		mapping="/static/**" />
+	<mvc:default-servlet-handler />
+	
+	<!-- 配置拦截器-->
+	<mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/workFlowData/*"/>
+            <mvc:mapping path="/workFlowAction/*"/>
+            <mvc:mapping path="/settingMeta/metaCustomList"/>
+            <mvc:mapping path="/settingModel/modelList"/>
+            <bean class="org.zywx.appdo.flow.util.WorkFlowInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="order" value="1" />
+		<property name="favorParameter" value="false" />
+		<property name="ignoreAcceptHeader" value="true" />
+		<property name="mediaTypes">
+			<map>
+				<entry key="html" value="text/html" />
+				<entry key="xml" value="application/xml" />
+				<entry key="json" value="application/json" />
+			</map>
+		</property>
+		<property name="defaultViews">
+			<list>
+				<bean
+					class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
+					<property name="prefixJson" value="true" />
+				</bean>
+				<bean class="org.springframework.web.servlet.view.xml.MarshallingView">
+					<constructor-arg>
+						<bean class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+							<property name="classesToBeBound">
+								<list>
+									<value>org.zywx.appdo.common.pojo.RetInfo</value>
+								</list>
+							</property>
+						</bean>
+					</constructor-arg>
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 上面没匹配到则会使用这个视图解析器 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="order" value="2" />
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+	</bean>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="60000000" />
+	</bean>
+
+	<bean id="exceptionResolver"
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="defaultErrorView">
+			<value>error</value>
+		</property>
+		<property name="defaultStatusCode">
+			<value>500</value>
+		</property>
+		<property name="warnLogCategory">
+			<value>org.springframework.web.servlet.handler.SimpleMappingExceptionResolver
+			</value>
+		</property>
+	</bean>
+	<!-- json处理 -->
+	<bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper"></bean>
+	<!-- Rest处理 -->
+	<bean id="restResponseFactory" class="org.activiti.rest.service.api.RestResponseFactory"></bean>
+	<bean id="contentTypeResolver"
+		class="org.activiti.rest.common.application.DefaultContentTypeResolver"></bean>
+
+</beans>

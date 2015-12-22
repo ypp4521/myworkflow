@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/appdo/!svn/ver/41361/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/spring
+END
+spring-context.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/appdo/!svn/ver/41361/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/spring/spring-context.xml
+END
+spring-mybatis.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/appdo/!svn/ver/39562/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/spring/spring-mybatis.xml
+END

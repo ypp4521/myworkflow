@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+	h2{
+		text-align: center;
+	}
+	.main{
+		width: 660px;
+		border: 2px #000 solid;
+		border-collapse: collapse;
+		font-size: 14px;
+		font-family: "微软雅黑";
+		text-align: center;
+		margin: 0 auto;
+	}
+	input{
+		border: none;
+		font-size: 14px;
+		outline: none;
+		text-align: center;
+		font-family: "微软雅黑";
+	}
+	.main td{
+		border: 1px #000 solid;
+		height: 40px;
+		width: 16%;
+
+	}
+	.main tr{
+		width: 100%;
+	}
+	.font0{
+		font-size: 0;
+	}
+	.font0 input,.font0 label{
+		font-size: 14px;
+		margin-right: 10px;
+		vertical-align: middle;
+	}
+	.leavedate input{
+		width: 35px;
+		border: none;
+		border-bottom: 1px solid #000;
+		outline: none;
+		text-align: right;
+
+	}
+	#otherreason{
+		width: 40px;
+		border: none;
+		border-bottom: 1px solid #000;
+		outline: none;
+		text-align: left;
+	}
+	.leavetxt{
+		width:96%;
+		height:90%;
+		resize:none;
+		border:none;
+		outline:none;
+		font-family: "微软雅黑";
+		font-size:14px;
+	}
+</style>
+<link rel="stylesheet" href="../../../static/sheet/bootstrap.min.css">
+<link rel="stylesheet" href="../../../static/sheet/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css">
+<script type="text/javascript" src="../../../static/sheet/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../../../static/sheet/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../static/sheet/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="../../../static/sheet/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+
+
+</head>
+<body>
+<script>
+	$(function(){
+		$('#startdate,#enddate').datetimepicker({
+    	format: 'yyyy-mm-dd hh:ii',
+		weekStart: 1,
+		todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		forceParse: 0,
+        showMeridian: 1
+	}).on('changeDate', function(ev){
+			if($('#startdate').val()!=""&&$('#enddate').val()){
+				  var a=$('#startdate').val();
+				  var b=$('#enddate').val();
+	    		  a=a.replace(/-/g,'/');
+	    		  b=b.replace(/-/g,'/');
+	    		  var time1 = new Date(a);
+	    		  var time2 = new Date(b);
+	    		  time1=time1.getTime();
+	    		  time2=time2.getTime();
+	    		  c=time2-time1;
+	    		  hour=Math.round(c/(1000*3600));
+	    		  c=c/(1000*3600*24);
+	    		  d=Math.round(c);
+	    		  $('#countday').val(c);
+	    		  if(c>d){
+	    		  	var lefthour=hour-(d*24);
+	    		  }else{
+	    		  	var lefthour=hour-((d-1)*24);
+	    		  }
+	    		  if(lefthour==24)
+	    		  	lefthour=0;
+	    		  $('#countday').val(d);
+	    		  $('#counthour').val(lefthour);
+			}
+		});
+	})
+</script>
+	<h2>员工外出申请表</h2>
+	<div style="font-size:12px;padding-left:400px;text-align:center">编号：<input name="" type="text" title="申请日期" value="" style="width:100px;text-align:left"></div>
+	<table class="main">
+		<tr>
+			<td>填表日期</td>
+			<td><input name="" type="text" value="" style="width:100%"></td>
+			<td style="width:18%">部门</td>
+			<td><input name="" type="text" value="" style="width:100%"></td>
+			<td>申请人</td>
+			<td><input name="" type="text" value="" style="width:100%"></td>
+		</tr>
+		<tr>
+			<td>外出时间</td>
+			<td colspan="5" class="leavedate">
+				 <input id="startdate" type="text" placeholder="年/月/日/时" style="width:120px">
+				 至<input id="enddate" type="text" placeholder="年/月/日/时" style="width:120px">
+				 共<input id="countday" type="text" style="width:30px">天<input id="counthour" type="text" style="width:30px">时
+			</td>
+		</tr>
+		<tr>
+			<td style="height:45px">拜访公司名称</td>
+			<td colspan="2"><input name="" type="text" value="" style="width:91%;text-align:left"></td>
+			<td style="height:45px">拜访人</td>
+			<td colspan="2"><input name="" type="text" value="" style="width:91%;text-align:left"></td>
+		</tr>
+		<tr>
+			<td style="height:45px">预计返回时间</td>
+			<td colspan="5"><input name="" type="text" value="" style="width:96%;text-align:left"></td>
+		</tr>
+		<tr>
+			<td style="height:90px">请假事由</td>
+			<td colspan="5"><textarea class="leavetxt" title="请假事由" name=""></textarea></td>
+		</tr>
+		<tr>
+			<td style="height:70px">部门领导意见</td>
+			<td colspan="2"><input name="" type="text" title="部门领导意见" value=""  style="width:91%;text-align:left"></td>
+			<td style="height:70px">直属副总意见</td>
+			<td colspan="2"><input name="" type="text" title="直属副总意见" value=""  style="width:91%;text-align:left"></td>	
+		</tr>
+	</table>
+</body>
+</html>

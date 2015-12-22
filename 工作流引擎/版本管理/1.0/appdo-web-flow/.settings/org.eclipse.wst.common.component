@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="appdo-web-flow">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
+        <dependent-module archiveName="appdo-common-4.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/appdo-common/appdo-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="appdo-common-core-4.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/appdo-common-core/appdo-common-core">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="appdo-web-flow"/>
+        <property name="java-output-path" value="/appdo-web-flow/target/classes"/>
+        <property name="component.exclusion.patterns" value="WEB-INF/web.xml"/>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/diagram/images/deployer
+END
+service.png
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/diagram/images/deployer/service.png
+END
+timer.png
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/diagram/images/deployer/timer.png
+END
+manual.png
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/diagram/images/deployer/manual.png
+END
+send.png
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/diagram/images/deployer/send.png
+END
+user.png
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/diagram/images/deployer/user.png
+END
+business_rule.png
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/diagram/images/deployer/business_rule.png
+END
+script.png
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/diagram/images/deployer/script.png
+END
+message_throw.png
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/diagram/images/deployer/message_throw.png
+END
+error_throw.png
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/diagram/images/deployer/error_throw.png
+END
+signal_throw.png
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/diagram/images/deployer/signal_throw.png
+END
+receive.png
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/diagram/images/deployer/receive.png
+END
+message_catch.png
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/diagram/images/deployer/message_catch.png
+END
+signal_catch.png
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/diagram/images/deployer/signal_catch.png
+END
+error_catch.png
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/diagram/images/deployer/error_catch.png
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/connection
+END
+DecoratedConnection.js
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/connection/DecoratedConnection.js
+END
+MyInputPort.js
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/connection/MyInputPort.js
+END
+MyOutputPort.js
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/connection/MyOutputPort.js
+END

@@ -1,0 +1,248 @@
+说明：
+流程引擎对外提供两种类型接口：
+1：操作请求接口:对应OAQueryActionController.java
+2：数据请求接口:对应OAQueryDataController.java
+
+目前提供以下接口:
+1：操作请求接口
+    1>:保存/提交接口
+       请求格式
+       var json={"tenantId":租户id固定值611,
+                "entityTypeId":"24",
+                "entity":{实体内容},
+                "operateUserId":用户id,
+                "userId":用户id,
+                "userType":用户类型 0 员工 1 部门领导 2 直属副总 3 人力经理
+                "entityId":"E150f56771da3139",
+                "operateTypeId":"01",
+                "objectId":"5642ec42865ccmd1043b3edc",
+                "createdAt":"2015-11-11T07:20:34.079Z"
+                };
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowAction/saveForm/0"#保存
+              "http://ip:port/appdo-web-flow/workFlowAction/saveForm/1"#提交
+    2>:签收任务
+        var json = {
+            "tenantId" : 租户id固定值611#必填,
+            "userId" : 用户id#必填,
+            "taskId" : 任务id#必填
+        }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowAction/claimTask
+    3>:提交任务
+        var json = {
+                "tenantId" : 租户id固定值611#必填,
+                "userId" : 用户id#必填,
+                "taskId" : 任务id#必填,
+                "approve":"",可选值有[true,false]  true同意 false 不同意
+                "approveResult":"同意"
+        }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowAction/commitTask
+    4>:删除草稿数据
+        var json = {
+                "tenantId" : 租户id固定值611#必填,
+                "businessKey" : 单据id#必填,
+            }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowAction/delDraftData
+    5>:驳回任务
+        var json = {
+                "tenantId" : 租户id固定值611#必填,
+                "taskId" : 任务id#必填,
+                "targetTaskKey":驳回至任务id#必填
+            }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowAction/rejectTask
+    6>:收回任务
+        var json = {
+                "tenantId" : 租户id固定值611#必填,
+                "prco_inset_id" : 实例id#必填,
+                "userId":用户id#必填
+            }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowAction/backTask
+    7>:挂起/恢复流程
+        var json = {
+                "prco_inset_id" : 实例id#必填
+            }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowAction/isSuspended/active    #恢复
+                "http://ip:port/appdo-web-flow/workFlowAction/isSuspended/suspend    #挂起
+2：数据请求接口
+    1>:查询单据类型列表接口
+        请求格式
+        var json = {
+            "tenantId" : 租户id固定值611,#必填
+            "userId" : "",用户id#必填
+        }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowData/getBillTypeList"
+    2>:查询工单模板接口
+        请求格式
+        var json = {
+            "tenantId" : 租户id固定值611,#必填
+            "userId" : ""用户id#必填,
+            "metaid" : "20",流程id#必填
+            "billKey" : "38",单据id#必填
+        }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowData/getBillTypeFileById"
+    3>:查询草稿箱接口
+        请求格式
+        var json = {
+            "tenantId" : 租户id固定值611,#必填
+            "userId" : "ZY0315"用户id#必填,
+            "metaid" : "",可选（默认空）
+            "billKey" : "",可选（默认空）
+            "rowCnt" : ""每页显示行数#必填,
+            "pageNo" : ""请求页数#必填
+        }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowData/getDraftList"
+    4>:查询待签收接口
+        var json = {
+            "tenantId" : 租户id固定值611,#必填
+            "userId" : "ZY0315"用户id#必填,
+            "metaid" : "",可选（默认空）
+            "billKey" : "",可选（默认空）
+            "rowCnt" : ""每页显示行数#必填,
+            "pageNo" : ""请求页数#必填
+        }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowData/getClaimList"
+    5>:查询代办理接口
+        var json = {
+            "tenantId" : 租户id固定值611,#必填
+            "userId" : "ZY0315"用户id#必填,
+            "metaid" : "",可选（默认空）
+            "billKey" : "",可选（默认空）
+            "rowCnt" : ""每页显示行数#必填,
+            "pageNo" : ""请求页数#必填
+        }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowData/getTodoList"
+    6>:查询已办理接口
+        var json = {
+            "tenantId" : 租户id固定值611,#必填
+            "userId" : "ZY0315"用户id#必填,
+            "metaid" : "",可选（默认空）,
+            "billKey" : "",可选（默认空）,
+            "prco_inset_id" : "",
+            "rowCnt" : ""每页显示行数#必填,
+            "pageNo" : ""请求页数#必填
+        }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowData/getApprovedList"
+    7>:查询审批历史接口
+        var json = {
+            "tenantId" : 租户id固定值611,#必填
+            "userId" : "ZY0315"用户id#必填,
+            "metaid" : "",可选（默认空）,
+            "billKey" : "",可选（默认空）,
+            "prco_inset_id" : ""流程id#必填,
+            "rowCnt" : ""每页显示行数#必填,
+            "pageNo" : ""请求页数#必填
+        }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowData/getHistoryList"
+    8>:查询执行中流程实例接口（对于申请人已经提交的单据）
+        var json = {
+            "tenantId" : 租户id固定值611,#必填
+            "userId" : "ZY0315"用户id#必填,
+            "rowCnt" : ""每页显示行数#必填,
+            "pageNo" : ""请求页数#必填,
+            "isFinished":"0" 未办结0 已办结1
+
+        }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowData/getMyInvolvedProcList"
+    9>:查询已完成流程实例接口（对于申请人已经提交的单据）
+        var json = {
+            "tenantId" : 租户id固定值611,#必填
+            "userId" : "ZY0315"用户id#必填,
+            "rowCnt" : ""每页显示行数#必填,
+            "pageNo" : ""请求页数#必填,
+            "isFinished":"1" 未办结0 已办结1
+        }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowData/getMyInvolvedProcList"
+    10>:查询我提交的数据
+        var json = {
+            "tenantId" : 租户id固定值611,#必填
+            "userId" : "ZY0315"用户id#必填,
+            "metaid" : "",可选（默认空）
+            "billKey" : "",可选（默认空）
+            "rowCnt" : ""每页显示行数#必填,
+            "pageNo" : ""请求页数#必填
+        }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowData/getMySubmitList"
+    11>:查询流程定义信息
+        var json = {
+            "tenantId" : 租户id固定值611,#必填
+            "userId" : "",用户id#必填,
+            "metaid" : "",可选（默认空）
+            "billKey" : "",可选（默认空）
+            "prco_inset_id" : 模型id#必填,
+            "rowCnt" : ""每页显示行数#必填,
+            "pageNo" : ""请求页数#必填
+        }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowData/getProcessDefList"
+    12>:可驳回列表数据
+        var json = {
+            "tenantId" : ""租户id固定值611,#必填,
+            "userId" : ""用户id#必填,
+            "prco_inset_id" : taskId#必填,
+            "metaid" : "",可选（默认空）
+            "billKey" : "",可选（默认空）
+            "rowCnt" : "",每页显示行数#必填,
+            "pageNo" : "",请求页数#必填
+
+        }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowData/getToRejectTaskList"
+
+    13>:查看我收回的列表数据
+        var json = {
+            "tenantId" : ""租户id固定值611,#必填
+            "userId" : "",用户id#必填,
+            "metaid" : "",可选（默认空）
+            "billKey" : "",可选（默认空）
+            "rowCnt" : "",每页显示行数#必填,
+            "pageNo" : "",请求页数#必填
+            "isrevoke":"1" 标识查询我收回的单据信息
+        }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowData/getRevokeBackToMyProcList"
+
+    14>:查看被退回的列表数据
+        var json = {
+            "tenantId" : ""租户id固定值611,#必填
+            "userId" : "",用户id#必填,
+            "metaid" : "",可选（默认空）
+            "billKey" : "",可选（默认空）
+            "rowCnt" : "",每页显示行数#必填,
+            "pageNo" : "",请求页数#必填
+            "isback":"1" 标识查询被退回的单据信息
+        }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowData/getCommitBackToMyProcList"
+    15>:根据当前流程任务id查询所对应模版的意见字段
+        var json = {
+            "wf_tenantId" : ""租户id固定值611,#必填
+            "wf_taskid" : "",用户id#必填,
+            "wf_metaid" : ""元数据模版id#必填,
+            "wf_billkey" : ""流程模版id#必填
+        }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowData/getTaskOpinionFieldByTaskIdAndFlowId"
+    16>:根据条件查询招聘 出差 外出 请假单据的返回目前只有 businessKey 字段 对应 objectid
+        var json = {
+            "tenantId" : ""租户id固定值611,#必填
+            "opType" : "",查询类型 1 招聘 2 外出 请假 出差 3...N等,
+            "objectIds" : ""元数据objectid#必填 如"1,2,3,4"
+        }
+        type : "post",
+        url : "http://ip:port/appdo-web-flow/workFlowData/getProcessOverByParamMap"

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/appdo/!svn/ver/42048/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service
+END
+BpmTodoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/appdo/!svn/ver/42034/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/BpmTodoService.java
+END
+WorkflowTraceService.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/WorkflowTraceService.java
+END
+WorkflowSendPostService.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/appdo/!svn/ver/41850/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/WorkflowSendPostService.java
+END
+WorkflowUserService.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/appdo/!svn/ver/41850/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/WorkflowUserService.java
+END
+BpmTodoTaskService.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/appdo/!svn/ver/42034/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/BpmTodoTaskService.java
+END
+BpmApproveService.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/appdo/!svn/ver/40504/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/BpmApproveService.java
+END
+WorkflowService.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/appdo/!svn/ver/41638/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/WorkflowService.java
+END
+BpmTodoProcinstService.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/appdo/!svn/ver/42034/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/BpmTodoProcinstService.java
+END
+WorkflowProcessDefinitionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/WorkflowProcessDefinitionService.java
+END

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.zywx.appdo.meta.dao.impl.MetaCustomFieldDaoImpl">
+	<resultMap id="BaseResultMap" type="org.zywx.appdo.meta.entity.MetaCustomField">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="fieldname" property="fieldname" jdbcType="VARCHAR" />
+		<result column="fieldcode" property="fieldcode" jdbcType="VARCHAR" />
+		<result column="fieldtype" property="fieldtype" jdbcType="CHAR" />
+		<result column="metaid" property="metaid" jdbcType="INTEGER" />
+		<result column="checktype" property="checktype" jdbcType="VARCHAR" />
+		<result column="fieldtodo" property="fieldtodo" jdbcType="VARCHAR" />
+		<result column="todotemplate" property="todotemplate" jdbcType="VARCHAR" />
+		<result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+		<result column="remark" property="remark" jdbcType="VARCHAR" />
+		<result column="tenantId" property="tenantId" jdbcType="INTEGER" />
+		<result column="ifEdit" property="ifEdit" jdbcType="VARCHAR" />
+		<result column="ifAuto" property="ifAuto" jdbcType="VARCHAR" />
+		<result column="ifVisible" property="ifVisible" jdbcType="VARCHAR" />
+		<result column="defaultValue" property="defaultValue" jdbcType="VARCHAR" />
+		<result column="ifVariable" property="ifVariable" jdbcType="VARCHAR" />
+		<result column="isOpinion" property="isOpinion" jdbcType="VARCHAR" />
+		<result column="ifVariableValue" property="ifVariableValue"
+			jdbcType="VARCHAR" />
+	</resultMap>
+
+	<resultMap id="QueryWorkFlowAndFieldBeanMap" type="org.zywx.appdo.bean.QueryWorkFlowAndFieldBean">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="wf_node_id" property="wf_node_id" jdbcType="VARCHAR" />
+		<result column="wf_node_name" property="wf_node_name" jdbcType="VARCHAR" />
+		<result column="wf_meta_busi_id" property="wf_meta_busi_id"
+			jdbcType="VARCHAR" />
+		<result column="wf_tenantId" property="wf_tenantId" jdbcType="VARCHAR" />
+		<result column="wf_meta_custom_field_code" property="wf_meta_custom_field_code"
+			jdbcType="VARCHAR" />
+		<result column="wf_meta_custom_field_name" property="wf_meta_custom_field_name"
+			jdbcType="VARCHAR" />
+		<result column="wf_modelkey" property="wf_modelkey" jdbcType="VARCHAR" />
+		<result column="wf_meta_customs_id" property="wf_meta_customs_id"
+			jdbcType="VARCHAR" />
+		<result column="wf_meta_customs_code" property="wf_meta_customs_code"
+			jdbcType="VARCHAR" />
+
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id, fieldname, fieldcode, fieldtype, metaid, checktype,
+		fieldtodo,
+		todotemplate, createtime,
+		remark,
+		tenantId,ifEdit,ifVisible,defaultValue,ifAuto,ifVariable,isOpinion,ifVariableValue
+	</sql>
+	<insert id="insert" parameterType="org.zywx.appdo.meta.entity.MetaCustomField"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into meta_custom_field
+		(fieldname, fieldcode, fieldtype,
+		metaid, checktype, fieldtodo,
+		todotemplate, createtime, remark,
+		tenantId,ifEdit,ifVisible,defaultValue,ifAuto,ifVariable,isOpinion,ifVariableValue)
+		values (#{fieldname,jdbcType=VARCHAR}, #{fieldcode,jdbcType=VARCHAR},
+		#{fieldtype,jdbcType=CHAR},
+		#{metaid,jdbcType=INTEGER},
+		#{checktype,jdbcType=VARCHAR}, #{fieldtodo,jdbcType=VARCHAR},
+		#{todotemplate,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP},
+		#{remark,jdbcType=VARCHAR},
+		#{tenantId,jdbcType=INTEGER},#{ifEdit,jdbcType=VARCHAR},#{ifVisible,jdbcType=VARCHAR},#{defaultValue,jdbcType=VARCHAR},
+		#{ifAuto,jdbcType=VARCHAR},#{ifVariable,jdbcType=VARCHAR},#{isOpinion,jdbcType=VARCHAR},#{ifVariableValue,jdbcType=VARCHAR})
+	</insert>
+	<insert id="batchInsert" parameterType="java.util.List">
+		insert into meta_custom_field (fieldname, fieldcode, fieldtype,
+		metaid, checktype, fieldtodo,
+		todotemplate, createtime, remark,
+		tenantId,ifEdit,ifVisible,defaultValue,ifAuto,ifVariable,isOpinion,ifVariableValue)values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.fieldname,jdbcType=VARCHAR},
+			#{item.fieldcode,jdbcType=VARCHAR}, #{item.fieldtype,jdbcType=CHAR},
+			#{item.metaid,jdbcType=INTEGER}, #{item.checktype,jdbcType=VARCHAR},
+			#{item.fieldtodo,jdbcType=VARCHAR},
+			#{item.todotemplate,jdbcType=VARCHAR},
+			#{item.createtime,jdbcType=TIMESTAMP},
+			#{item.remark,jdbcType=VARCHAR},
+			#{item.tenantId,jdbcType=INTEGER},#{item.ifEdit,jdbcType=VARCHAR},#{item.ifVisible,jdbcType=VARCHAR},
+			#{item.defaultValue,jdbcType=VARCHAR},#{item.ifAuto,jdbcType=VARCHAR},#{item.ifVariable,jdbcType=VARCHAR},#{item.isOpinion,jdbcType=VARCHAR},#{item.ifVariableValue,jdbcType=VARCHAR})
+		</foreach>
+	</insert>
+	<update id="update" parameterType="org.zywx.appdo.meta.entity.MetaCustomField">
+		update meta_custom_field
+		set
+		fieldname = #{fieldname,jdbcType=VARCHAR},
+		fieldcode =
+		#{fieldcode,jdbcType=VARCHAR},
+		fieldtype = #{fieldtype,jdbcType=CHAR},
+		metaid = #{metaid,jdbcType=INTEGER},
+		checktype =
+		#{checktype,jdbcType=VARCHAR},
+		fieldtodo =
+		#{fieldtodo,jdbcType=VARCHAR},
+		todotemplate =
+		#{todotemplate,jdbcType=VARCHAR},
+		remark = #{remark,jdbcType=VARCHAR},
+		ifEdit = #{ifEdit,jdbcType=VARCHAR},
+		ifVisible =
+		#{ifVisible,jdbcType=VARCHAR},
+		defaultValue =
+		#{defaultValue,jdbcType=VARCHAR},
+		ifAuto = #{ifAuto,jdbcType=VARCHAR},
+		ifVariable = #{ifVariable,jdbcType=VARCHAR},
+		isOpinion =
+		#{isOpinion,jdbcType=VARCHAR},
+		ifVariableValue =
+		#{ifVariableValue,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=INTEGER}
+		and
+		tenantId =
+		#{tenantId,jdbcType=INTEGER}
+	</update>
+	<delete id="deleteById" parameterType="java.util.Map">
+		delete from
+		meta_custom_field
+		where id = #{id,jdbcType=INTEGER}
+		and tenantId =
+		#{tenantId,jdbcType=INTEGER}
+	</delete>
+	<delete id="deleteByIds" parameterType="java.util.Map">
+		delete from meta_custom_field where tenantId =
+		#{tenantId,jdbcType=BIGINT} AND id IN
+		<foreach collection="list" item="item" index="index" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+	<delete id="deleteByConditions" parameterType="java.util.Map">
+		delete from meta_custom_field
+		<where>
+			<include refid="conditionSql" />
+		</where>
+	</delete>
+
+	<select id="getTemplateFieldSByIdAndMetaId" resultMap="BaseResultMap"
+		parameterType="java.util.Map">
+		select id,fieldname, fieldcode, fieldtype,
+		metaid,checktype,ifEdit,ifVisible,defaultValue,ifVariable,isOpinion,ifVariableValue
+		from meta_custom_field where tenantId = #{tenantId} and metaid =
+		${metaid} order by id asc
+	</select>
+
+	<select id="getById" resultMap="BaseResultMap" parameterType="java.util.Map">
+		select * from meta_custom_field
+		where id = #{id,jdbcType=INTEGER}
+		and
+		tenantId = #{tenantId,jdbcType=INTEGER}
+	</select>
+	<select id="getByIds" resultMap="BaseResultMap" parameterType="java.util.Map">
+		select * from meta_custom_field where tenantId =
+		#{tenantId,jdbcType=BIGINT} AND id IN
+		<foreach collection="list" item="item" index="index" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+	<select id="getPage" resultMap="BaseResultMap" parameterType="java.util.Map">
+		select * from meta_custom_field
+		<where>
+			<include refid="conditionSql" />
+		</where>
+		order by ${sort} ${dir}
+	</select>
+	<select id="getByMap" resultMap="BaseResultMap" parameterType="java.util.Map">
+		select * from meta_custom_field
+		<where>
+			<include refid="conditionSql" />
+		</where>
+		order by ${sort} ${dir}
+	</select>
+	<sql id="conditionSql">
+		<if test="fieldname != null and  fieldname != '' ">
+			and fieldname = #{fieldname}
+		</if>
+		<if test="fieldcode != null and  fieldcode != '' ">
+			and fieldcode = #{fieldcode}
+		</if>
+		<if test="fieldtype != null and  fieldtype != '' ">
+			and fieldtype = #{fieldtype}
+		</if>
+		<if test="metaid != null and  metaid != '' ">
+			and metaid = #{metaid}
+		</if>
+		<if test="checktype != null and  checktype != '' ">
+			and checktype = #{checktype}
+		</if>
+		<if test="fieldtodo != null and  fieldtodo != '' ">
+			and fieldtodo = #{fieldtodo}
+		</if>
+		<if test="todotemplate != null and  todotemplate != '' ">
+			and todotemplate = #{todotemplate}
+		</if>
+		<if test="createtime != null and  createtime != '' ">
+			and createtime = #{createtime}
+		</if>
+		<if test="remark != null and  remark != '' ">
+			and remark = #{remark}
+		</if>
+		<if test="tenantId != null and  tenantId != '' ">
+			and tenantId = #{tenantId}
+		</if>
+		<if test="ifEdit != null and  ifEdit != '' ">
+			and ifEdit = #{ifEdit}
+		</if>
+		<if test="ifVisible != null and  ifVisible != '' ">
+			and ifVisible = #{ifVisible}
+		</if>
+		<if test="defaultValue != null and  defaultValue != '' ">
+			and defaultValue = #{defaultValue}
+		</if>
+		<if test="ifAuto != null and  ifAuto != '' ">
+			and ifAuto = #{ifAuto}
+		</if>
+		<if test="ifVariable != null and  ifVariable != '' ">
+			and ifVariable = #{ifVariable}
+		</if>
+		<if test="isOpinion != null and  isOpinion != '' ">
+			and isOpinion = #{isOpinion}
+		</if>
+		<if test="ifVariableValue != null and  ifVariableValue != '' ">
+			and ifVariableValue = #{ifVariableValue}
+		</if>
+	</sql>
+
+	<sql id="conditionSqlWf">
+		<if test="id != null and  id != '' ">
+			and id = #{id}
+		</if>
+		<if test="wf_node_id != null and  wf_node_id != '' ">
+			and wf_node_id = #{wf_node_id}
+		</if>
+		<if test="wf_meta_busi_id != null and  wf_meta_busi_id != '' ">
+			and wf_meta_busi_id = #{wf_meta_busi_id}
+		</if>
+		<if test="wf_tenantId != null and  wf_tenantId != '' ">
+			and wf_tenantId = #{wf_tenantId}
+		</if>
+		<if
+			test="wf_meta_custom_field_code != null and  wf_meta_custom_field_code != '' ">
+			and wf_meta_custom_field_code = #{wf_meta_custom_field_code}
+		</if>
+		<if
+			test="wf_meta_custom_field_name != null and  wf_meta_custom_field_name != '' ">
+			and wf_meta_custom_field_name = #{wf_meta_custom_field_name}
+		</if>
+		<if test="wf_modelkey != null and  wf_modelkey != '' ">
+			and wf_modelkey = #{wf_modelkey}
+		</if>
+		<if test="wf_meta_customs_id != null and  wf_meta_customs_id != '' ">
+			and wf_meta_customs_id = #{wf_meta_customs_id}
+		</if>
+		<if test="wf_meta_customs_code != null and  wf_meta_customs_code != '' ">
+			and wf_meta_customs_code = #{wf_meta_customs_code}
+		</if>
+	</sql>
+	<select id="selectQueryWorkFlowAndFieldBean" resultMap="QueryWorkFlowAndFieldBeanMap"
+		parameterType="java.util.Map">
+		select * from wf_meta_flow_field where
+		wf_modelkey =
+		#{wf_modelkey} and
+		wf_node_id = #{wf_node_id}
+	</select>
+	<delete id="deleteQueryWorkFlowAndFieldBean" parameterType="java.util.Map">
+		delete from wf_meta_flow_field
+		<where>
+			<include refid="conditionSqlWf" />
+		</where>
+	</delete>
+	<insert id="insertQueryWorkFlowAndFieldBean" parameterType="java.util.Map"
+		keyProperty="id">
+		insert into wf_meta_flow_field
+		(wf_node_id,wf_node_name,
+		wf_meta_busi_id, wf_tenantId,
+		wf_meta_custom_field_code,
+		wf_meta_custom_field_name, wf_modelkey,
+		wf_meta_customs_id,
+		wf_meta_customs_code)
+		values
+		(#{wf_node_id},
+		#{wf_node_name},
+		#{wf_meta_busi_id},
+		#{wf_tenantId},
+		#{wf_meta_custom_field_code},
+		#{wf_meta_custom_field_name},
+		#{wf_modelkey},
+		#{wf_meta_customs_id},
+		#{wf_meta_customs_code})
+	</insert>
+	<update id="updateQueryWorkFlowAndFieldBean" parameterType="java.util.Map">
+		update wf_meta_flow_field set wf_meta_custom_field_code =
+		#{wf_meta_custom_field_code},wf_meta_custom_field_name =
+		#{wf_meta_custom_field_name}
+		where wf_node_id=#{wf_node_id} and
+		wf_modelkey = #{wf_modelkey}
+	</update>
+</mapper>

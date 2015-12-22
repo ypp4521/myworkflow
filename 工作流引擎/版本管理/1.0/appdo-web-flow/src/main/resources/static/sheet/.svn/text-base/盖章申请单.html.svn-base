@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+
+<style>
+	h2{
+		text-align: center;
+	}
+	.main{
+		width: 660px;
+		border: 2px #000 solid;
+		border-collapse: collapse;
+		font-size: 14px;
+		font-family: "微软雅黑";
+		text-align: center;
+		margin: 0 auto;
+	}
+	input{
+		border: none;
+		font-size: 14px;
+		outline: none;
+		text-align: center;
+		font-family: "微软雅黑";
+	}
+	.main td{
+		border: 1px #000 solid;
+		height: 45px;
+		width: 16%;
+
+	}
+	.main tr{
+		width: 100%;
+	}
+	/* .main td input,.main td label{
+		float: left;
+		margin-left: 10px;
+		margin-top: 10px;
+	} */
+	.font0{
+		font-size: 0;
+	}
+	.font0 input,.font0 label{
+		font-size: 14px;
+		margin-right: 10px;
+		vertical-align: middle;
+	}
+	textarea{
+		width:96%;
+		height:90%;
+		resize:none;
+		border:none;
+		outline:none;
+		font-family: "微软雅黑";
+		font-size:14px;
+	}
+</style>
+<link rel="stylesheet" href="../../../static/sheet/bootstrap.min.css">
+<script type="text/javascript" src="../../../static/sheet/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../../../static/sheet/bootstrap.min.js"></script>
+</head>
+<body>
+	<h2>盖章申请单</h2>
+	<div style="font-size:12px;padding-left:400px;text-align:center">编号：<input name="" type="text" title="申请日期" value="" style="width:100px;text-align:left"></div>
+	<table class="main">
+		<tr>
+			<td style="width:15%">申请日期</td>
+			<td style="width:15%"><input  name="" type="text" title="申请日期" value="" style="width:97%"></td>
+			<td style="width:15%">部门</td>
+			<td style="width:20%"><input name="" type="text" title="部门" value="" style="width:97%"></td>
+			<td style="width:15%">申请人</td>
+			<td style="width:15%"><input name="" type="text" title="申请人" value="" style="width:97%"></td>
+		</tr>
+		<tr>
+			<td style="width:15%">所盖文件名称</td>
+			<td colspan="5"><input  name="" type="text" title="所盖文件名称" value="" style="width:96%;text-align:left"></td>
+		</tr>
+		<tr>
+			<td style="width:15%;height:90px;">事由</td>
+			<td colspan="5"><textarea title="事由" name="trip09" value=""></textarea></td>
+		</tr>
+		<tr>
+			<td style="width:15%">份数</td>
+			<td colspan="2"><input  name="" type="text" title="份数" value="" style="width:97%"></td>
+			<td style="width:15%">用章类别</td>
+			<td colspan="2"><input name="" type="text" title="用章类别" value="" style="width:97%"></td>
+		</tr>
+		<tr>
+			<td style="width:15%">审批人</td>
+			<td colspan="2"><input  name="" type="text" title="审批人" value="" style="width:97%"></td>
+			<td style="width:15%">备注</td>
+			<td colspan="2"><input name="" type="text" title="备注" value="" style="width:97%"></td>
+		</tr>
+	</table>
+</body>
+</html>

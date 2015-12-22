@@ -1,0 +1,337 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>文本框</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-ie6.css">
+    <![endif]-->
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/ie.css">
+    <![endif]-->
+    <link rel="stylesheet" href="q.style.css">
+    <script type="text/javascript" src="../dialogs/internal.js"></script>
+    <script type="text/javascript">
+/* Thank you by  
+http://www.alt-tag.com/blog/2006/02/ie-dom-bugs/ */
+function createElement(type, name)
+{     
+    var element = null;     
+    try {        
+        element = document.createElement('<'+type+' name="'+name+'">');     
+    } catch (e) {}   
+    if(element==null) {     
+        element = document.createElement(type);     
+        element.name = name;     
+    } 
+    return element;     
+}
+    </script>
+</head>
+<body>
+<div class="content">
+    <table class="table table-bordered table-striped table-hover">
+     <tr>
+        <th><span>控件名称</span><span class="label label-important">*</span></th>
+        <th><span>默认值</span> </th>
+    </tr>
+    <tr>
+        <td><input type="text" id="orgname" placeholder="必填项"></td>
+        <td><input type="text" id="orgvalue" placeholder="无则不填"></td>
+    </tr>
+    <tr>
+        <th><span>数据类型</span> </th>
+        <th><span>对齐方式</span> </th>
+    </tr>
+    <tr>
+        <td>
+            <select id="validType" style="width: 150px">
+    			<option value="length">有效长度</option>
+    			<option value="email">邮件</option>
+    			<option value="url">链接</option>
+    			<option value="mobile">手机号</option>
+    			<option value="zipcode">邮编</option>
+    			<option value="account">账号</option>
+    			<option value="CHS">汉字</option>
+    			<option value="number">数字</option>
+    			<option value="digits">整数</option>
+    			<option value="date">日期</option>
+    			<option value="remote">远程校验</option>
+    		</select>  
+        </td>
+        <td>
+            <select id="orgalign">
+                <option value="left" >左对齐</option>
+                <option value="center">居中对齐</option>
+                <option value="right">右对齐</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th><span>校验</span> </th>
+        <th><span>长度</span> </th>
+    </tr>
+    <tr>
+    	<td>
+    		<label class="checkbox inline">
+    		<input type="checkbox" value="1" id="required"/>必填
+    		</label>
+    	</td>
+    	<td>
+    		<label class="inline">
+    		左值:<input type="text" id="min" size="5" style="width: 30px">&nbsp;&nbsp;右值:<input type="text" id="max" size="5" style="width: 30px">
+    		</label>
+    	</td>
+    </tr>
+    <tr>
+        <th><span>&nbsp;&nbsp;&nbsp;&nbsp;长&nbsp;&nbsp;X&nbsp;&nbsp;宽&nbsp;&nbsp;&nbsp;&&nbsp;&nbsp;&nbsp;字体大小</span> </th>
+        <th><span>可见性</span> </th>
+    </tr>
+    <tr>
+        <td>
+            <input id="orgwidth" type="text" value="150" class="input-small span1" placeholder="auto"/>
+            X
+            <input id="orgheight" type="text" value="" class="input-small span1" placeholder="auto"/>
+            &
+            <input id="orgfontsize" type="text"  value="" class="input-small span1" placeholder="auto"/> px
+
+        </td>
+        <td>
+            <label class="checkbox inline"><input id="orghide" type="checkbox"/> 隐藏 </label>
+        </td>
+    </tr>
+
+    </table>
+</div>
+<script type="text/javascript">
+var oNode = null,thePlugins = 'text';
+window.onload = function() {
+    if( UE.plugins[thePlugins].editdom ){
+        oNode = UE.plugins[thePlugins].editdom;
+		var gValue = '';
+		if(oNode.getAttribute('value'))
+			gValue = oNode.getAttribute('value').replace(/&quot;/g,"\"");
+		var gTitle=oNode.getAttribute('title').replace(/&quot;/g,"\""),gHidden=oNode.getAttribute('orghide'),gFontSize=oNode.getAttribute('orgfontsize'),gAlign=oNode.getAttribute('orgalign'),gWidth=oNode.getAttribute('orgwidth'),gHeight=oNode.getAttribute('orgheight'),gType=oNode.getAttribute('data-options');
+		gValue = gValue==null ? '' : gValue;
+        gTitle = gTitle==null ? '' : gTitle;
+		$G('orgvalue').value = gValue;
+        $G('orgname').value = gTitle;
+        if (gHidden == '1')
+        {
+            $G('orghide').checked = true;
+        }
+        $G('orgfontsize').value = gFontSize;
+        $G('orgwidth').value = gWidth;
+        $G('orgheight').value = gHeight;
+        $G('orgalign').value = gAlign;
+        if(gType){
+        	if(gType.indexOf("required")>-1){
+        		$G('required').checked=true;
+        	}
+        	if(gType.indexOf("validType")>-1){
+        		if(gType.indexOf("length")>-1){
+        			var len=gType.substring(gType.indexOf("length")+7,gType.indexOf("]")).split(",");
+        			$G('validType').value='length';
+        			$G('min').value=len[0];
+        			$G('max').value=len[1];
+        		}else if(gType.indexOf("remote")>-1){
+        			var reg=gType.substring(gType.indexOf("remote")+7,gType.indexOf("]")).split(",");
+        			$G('validType').value='remote';
+        			$G('min').value=reg[0].replace(/\'/g,'');
+        			$G('max').value=reg[1].replace(/\'/g,'');
+        		}else if(gType.indexOf("date")>-1){
+        			$G('validType').value='date';
+        			var click=oNode.getAttribute('onclick');
+        			if(click.indexOf("{")>-1){
+        				var da=click.substring(click.indexOf("{")+1,click.indexOf("}")).split(",");
+        				for(var j=0;j<da.length;j++){
+        					if(da[j].indexOf("dateFmt")>-1){
+        						$G('max').value=da[j].substring(da[j].indexOf("'")+1,da[j].lastIndexOf("'"));
+        					}else if(da[j].indexOf("startDate")>-1){
+        						$G('min').value=da[j].substring(da[j].indexOf("'")+1,da[j].lastIndexOf("'"));
+        					}
+        				}
+        			}
+        		}
+        		if(gType.indexOf("length")>10){
+        			var ch=gType.substring(gType.indexOf("validType")+12,gType.indexOf("length")-3);
+        			$G('validType').value=ch;
+        		}else{
+        			var ch=gType.substring(gType.indexOf("validType")+11,gType.lastIndexOf("'"));
+        			$G('validType').value=ch;
+        		}
+        	}
+        }
+    }else{
+    	$G('orgname').value=window.parent.selectfieldname;
+    }
+}
+dialog.oncancel = function () {
+    if( UE.plugins[thePlugins].editdom ) {
+        delete UE.plugins[thePlugins].editdom;
+    }
+};
+dialog.onok = function (){
+    if($G('orgname').value==''){
+        alert('请输入控件名称');
+        return false;
+    }
+    var gValue=$G('orgvalue').value.replace(/\"/g,"&quot;"),gTitle=$G('orgname').value.replace(/\"/g,"&quot;"),gFontSize=$G('orgfontsize').value,gAlign=$G('orgalign').value,gWidth=$G('orgwidth').value,gHeight=$G('orgheight').value;
+    var validType="validType:";
+    var gType;
+    if($G('validType').value!='date'&&$G('min').value&&$G('max').value){
+    	if($G('validType').value=='length'){
+        	validType+="'"+$G('validType').value+"["+$G('min').value+","+$G('max').value+"]'";
+        }else if($G('validType').value=='remote'){
+        	validType+="'"+$G('validType').value+"['"+$G('min').value+"','"+$G('max').value+"']'";
+        }else{
+        	validType+="['"+$G('validType').value+"','length["+$G('min').value+","+$G('max').value+"]'"+"]";
+        }
+    }else{
+    	validType+="'"+$G('validType').value+"'";
+    }
+    if($G('required').checked){
+    	gType="required:true,"+validType;
+    }else{
+    	gType=validType;
+    }
+    if( !oNode ) {
+        try {
+            oNode = createElement('input',window.parent.selectfieldcode);
+            oNode.setAttribute('type','text');
+            oNode.setAttribute('title',gTitle);
+            oNode.setAttribute('value',gValue);
+            oNode.setAttribute('name',window.parent.selectfieldcode);
+            oNode.setAttribute('qPlugins',thePlugins);
+            if ( $G('orghide').checked ) {
+                oNode.setAttribute('orghide',1);
+            } else {
+                oNode.setAttribute('orghide',0);
+            }
+            if( gFontSize != '' ) {
+                oNode.style.fontSize = gFontSize + 'px';
+                //style += 'font-size:' + gFontSize + 'px;';
+                oNode.setAttribute('orgfontsize',gFontSize );
+            }
+            if( gAlign != '' ) {
+                //style += 'text-align:' + gAlign + ';';
+                oNode.style.textAlign = gAlign;
+                oNode.setAttribute('orgalign',gAlign );
+            }
+            if( gWidth != '' ) {
+                oNode.style.width = gWidth+ 'px';
+                //style += 'width:' + gWidth + 'px;';
+                oNode.setAttribute('orgwidth',gWidth );
+            }
+            if( gHeight != '' ) {
+                oNode.style.height = gHeight+ 'px';
+                //style += 'height:' + gHeight + 'px;';
+                oNode.setAttribute('orgheight',gHeight );
+            }
+            if( gType != '' ) {
+                oNode.setAttribute('data-options',gType );
+                if($G('validType').value=='date'){
+                	oNode.setAttribute('class','easyui-validatebox Wdate');
+                	if($G('min').value||$G('max').value){
+                		var WdatePicker="WdatePicker({";
+                		if($G('min').value){
+                			WdatePicker+="startDate:'"+$G('min').value+"'";
+                		}
+                		if($G('min').value&&$G('max').value){
+                			WdatePicker+=",";
+                		}
+                		if($G('max').value){
+                			WdatePicker+="dateFmt:'"+$G('max').value+"'";
+                		}
+                		WdatePicker+="})";
+                		oNode.setAttribute('onclick',WdatePicker);
+                	}else{
+                		oNode.setAttribute('onclick','WdatePicker()');
+                	}
+                }else{
+                	oNode.setAttribute('class','easyui-validatebox');
+                }
+            }else{
+                oNode.setAttribute('data-options', '');
+            }
+            //oNode.setAttribute('style',style );
+            //oNode.style.cssText=style;//ie7
+            editor.execCommand('insertHtml',oNode.outerHTML);
+        } catch (e) {
+            try {
+                editor.execCommand('error');
+            } catch ( e ) {
+                alert('控件异常！');
+            }
+            return false;
+        }
+    } else {
+        
+        oNode.setAttribute('title', gTitle);
+        oNode.setAttribute('value', $G('orgvalue').value);
+        if( $G('orghide').checked ) {
+            oNode.setAttribute('orghide', 1);
+        } else {
+            oNode.setAttribute('orghide', 0);
+        }
+        if( gFontSize != '' ) {
+            oNode.style.fontSize = gFontSize+ 'px';
+            oNode.setAttribute('orgfontsize',gFontSize );
+        }else{
+            oNode.style.fontSize = '';
+            oNode.setAttribute('orgfontsize', '');
+        }
+        if( gAlign != '' ) {
+            oNode.style.textAlign = gAlign;
+            oNode.setAttribute('orgalign',gAlign );
+        }else{
+            oNode.setAttribute('orgalign', '');
+        }
+        if( gWidth != '' ) {
+            oNode.style.width = gWidth+ 'px';
+            oNode.setAttribute('orgwidth',gWidth );
+        }else{
+            oNode.style.width = '';
+            oNode.setAttribute('orgwidth', '');
+        }
+        if( gHeight != '' ) {
+            oNode.style.height = gHeight+ 'px';
+            oNode.setAttribute('orgheight',gHeight );
+        }else{
+            oNode.style.height = '';
+            oNode.setAttribute('orgheight', '');
+        }
+        if( gType != '' ) {
+            oNode.setAttribute('data-options',gType );
+            if($G('validType').value=='date'){
+            	oNode.setAttribute('class','easyui-validatebox Wdate');
+            	if($G('min').value||$G('max').value){
+            		var WdatePicker="WdatePicker({";
+            		if($G('min').value){
+            			WdatePicker+="startDate:'"+$G('min').value+"'";
+            		}
+            		if($G('min').value&&$G('max').value){
+            			WdatePicker+=",";
+            		}
+            		if($G('max').value){
+            			WdatePicker+="dateFmt:'"+$G('max').value+"'";
+            		}
+            		WdatePicker+="})";
+            		oNode.setAttribute('onclick',WdatePicker);
+            	}else{
+            		oNode.setAttribute('onclick','WdatePicker()');
+            	}
+            }else{
+            	oNode.setAttribute('class','easyui-validatebox');
+            }
+        }else{
+            oNode.setAttribute('data-options', '');
+        }
+        delete UE.plugins[thePlugins].editdom;
+    }
+};
+</script>
+</body>
+</html>

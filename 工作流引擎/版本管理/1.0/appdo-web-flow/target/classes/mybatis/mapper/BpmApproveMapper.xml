@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.zywx.appdo.flow.dao.impl.BpmApproveDaoImpl" >
+  <resultMap id="BaseResultMap" type="org.zywx.appdo.flow.entity.BpmApprove" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="instanceid" property="instanceid" jdbcType="VARCHAR" />
+    <result column="taskid" property="taskid" jdbcType="VARCHAR" />
+    <result column="approve" property="approve" jdbcType="VARCHAR" />
+    <result column="approveresult" property="approveresult" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="apptype" property="apptype" jdbcType="CHAR" />
+    <result column="tenantId" property="tenantId" jdbcType="VARCHAR" />
+    <result column="targetkey" property="targetkey" jdbcType="VARCHAR" />
+    <result column="year" property="year" jdbcType="VARCHAR" />
+    <result column="userId" property="userId" jdbcType="VARCHAR" />
+    <result column="userName" property="userName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, instanceid, taskid, approve, approveresult, createtime, apptype, tenantId, targetkey,year,userId,userName
+  </sql>
+  <insert id="insert" parameterType="org.zywx.appdo.flow.entity.BpmApprove" useGeneratedKeys="true" keyProperty="id" >
+    insert into bpm_approve (instanceid, taskid, approve, 
+      approveresult, createtime, apptype, 
+      tenantId, targetkey,year,userId,userName)
+    values (#{instanceid,jdbcType=VARCHAR}, #{taskid,jdbcType=VARCHAR}, #{approve,jdbcType=VARCHAR}, 
+      #{approveresult,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{apptype,jdbcType=CHAR}, 
+      #{tenantId,jdbcType=VARCHAR}, #{targetkey,jdbcType=VARCHAR},#{year,jdbcType=VARCHAR},#{userId,jdbcType=VARCHAR},#{userName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="batchInsert" parameterType="java.util.List" >
+    insert into bpm_approve (instanceid, taskid, approve, 
+      approveresult, createtime, 
+      apptype, tenantId, targetkey,year,userId,userName
+      )values 
+    <foreach collection="list" item="item" index="index" separator=","> 
+    (#{item.instanceid,jdbcType=VARCHAR}, #{item.taskid,jdbcType=VARCHAR}, #{item.approve,jdbcType=VARCHAR}, 
+      #{item.approveresult,jdbcType=VARCHAR}, #{item.createtime,jdbcType=TIMESTAMP}, 
+      #{item.apptype,jdbcType=CHAR}, #{item.tenantId,jdbcType=VARCHAR}, #{item.targetkey,jdbcType=VARCHAR},
+      #{item.year,jdbcType=VARCHAR},#{item.userId,jdbcType=VARCHAR},#{item.userName,jdbcType=VARCHAR}
+      )
+    </foreach>
+  </insert>
+  <update id="update" parameterType="org.zywx.appdo.flow.entity.BpmApprove" >
+    update bpm_approve
+    set instanceid = #{instanceid,jdbcType=VARCHAR},
+      taskid = #{taskid,jdbcType=VARCHAR},
+      approve = #{approve,jdbcType=VARCHAR},
+      approveresult = #{approveresult,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      apptype = #{apptype,jdbcType=CHAR},
+      targetkey = #{targetkey,jdbcType=VARCHAR},
+      year = #{year,jdbcType=VARCHAR},
+      userId = #{userId,jdbcType=VARCHAR},
+      userName = #{userName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+      and tenantId = #{tenantId,jdbcType=VARCHAR}
+  </update>
+  <delete id="deleteById" parameterType="java.util.Map" >
+    delete from bpm_approve
+    where id = #{id,jdbcType=INTEGER}
+      and tenantId = #{tenantId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByIds" parameterType="java.util.Map" >
+    delete from bpm_approve where tenantId = #{tenantId,jdbcType=BIGINT} AND id IN 
+    <foreach collection="list" item="item" index="index" open="(" separator="," close=")" > 
+        #{item}
+    </foreach>
+  </delete>
+  <delete id="deleteByConditions" parameterType="java.util.Map" >
+    delete from bpm_approve
+    <where >
+      <include refid="conditionSql" />
+    </where>
+  </delete>
+  <select id="getById" resultMap="BaseResultMap" parameterType="java.util.Map" >
+     select * from bpm_approve
+    where id = #{id,jdbcType=INTEGER}
+      and tenantId = #{tenantId,jdbcType=VARCHAR}
+  </select>
+  <select id="getByIds" resultMap="BaseResultMap" parameterType="java.util.Map" >
+     select * from bpm_approve where tenantId = #{tenantId,jdbcType=BIGINT} AND  id IN 
+    <foreach collection="list" item="item" index="index" open="(" separator="," close=")" > 
+        #{item}
+    </foreach>
+  </select>
+  <select id="getPage" resultMap="BaseResultMap" parameterType="java.util.Map" >
+    select * from bpm_approve
+    <where >
+      <include refid="conditionSql" />
+    </where>
+     order by ${sort} ${dir}  
+  </select>
+  <select id="getByMap" resultMap="BaseResultMap" parameterType="java.util.Map" >
+    select * from bpm_approve
+    <where >
+      <include refid="conditionSql" />
+    </where>
+     order by ${sort} ${dir}  
+  </select>
+  <sql id="conditionSql" >
+    <if test="instanceid != null and  instanceid != '' " >
+        and instanceid = #{instanceid} 
+    </if>
+    <if test="taskid != null and  taskid != '' " >
+        and taskid = #{taskid} 
+    </if>
+    <if test="approve != null and  approve != '' " >
+        and approve = #{approve} 
+    </if>
+    <if test="approveresult != null and  approveresult != '' " >
+        and approveresult = #{approveresult} 
+    </if>
+    <if test="createtime != null and  createtime != '' " >
+        and createtime = #{createtime} 
+    </if>
+    <if test="apptype != null and  apptype != '' " >
+        and apptype = #{apptype} 
+    </if>
+    <if test="tenantId != null and  tenantId != '' " >
+        and tenantId = #{tenantId} 
+    </if>
+    <if test="targetkey != null and  targetkey != '' " >
+        and targetkey = #{targetkey} 
+    </if>
+    <if test="year != null and  year != '' " >
+        and year = #{year} 
+    </if>
+    <if test="userId != null and  userId != '' " >
+        and userId = #{userId} 
+    </if>
+    <if test="userName != null and  userName != '' " >
+        and userName = #{userName} 
+    </if>
+  </sql>
+</mapper>

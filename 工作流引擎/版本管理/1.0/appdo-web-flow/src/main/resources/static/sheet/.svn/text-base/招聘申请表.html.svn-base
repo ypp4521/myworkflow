@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+	h2{
+		text-align: center;
+	}
+	.main{
+		width: 660px;
+		border: 2px #000 solid;
+		border-collapse: collapse;
+		font-size: 14px;
+		font-family: "微软雅黑";
+		text-align: center;
+		margin: 0 auto;
+	}
+	input{
+		border: none;
+		font-size: 14px;
+		outline: none;
+		text-align: center;
+		font-family: "微软雅黑";
+	}
+	.main td{
+		border: 1px #000 solid;
+		height: 40px;
+		width: 16%;
+
+	}
+	.main tr{
+		width: 100%;
+	}
+	.font0{
+		font-size: 0;
+	}
+	.font0 input,.font0 label{
+		font-size: 14px;
+		margin-right: 10px;
+		vertical-align: middle;
+	}
+	.leavedate input{
+		width: 35px;
+		border: none;
+		border-bottom: 1px solid #000;
+		outline: none;
+		text-align: right;
+
+	}
+	textarea{
+		width:96%;
+		height:90%;
+		resize:none;
+		border:none;
+		outline:none;
+		font-family: "微软雅黑";
+		font-size:14px;
+	}
+	#otherreason{
+		width: 40px;
+		border: none;
+		border-bottom: 1px solid #000;
+		outline: none;
+		text-align: left;
+	}
+	.jobbox{
+		text-align: left;
+	}
+	.jobbox input{
+		margin-bottom: 10px;
+	}
+</style>
+<link rel="stylesheet" href="../../../static/sheet/bootstrap.min.css">
+<script type="text/javascript" src="../../../static/sheet/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../../../static/sheet/bootstrap.min.js"></script>
+</head>
+<body>
+	<h2>招聘申请表</h2>
+	<div style="font-size:12px;padding-left:400px;text-align:center">编号：<input name="" type="text" title="申请日期" value="" style="width:100px;text-align:left"></div>
+	<table class="main">
+		<tr>
+			<td colspan="6">申请信息</td>
+		</tr>
+		<tr>
+			<td style="width:12%">申请日期</td>
+			<td><input name="" type="text" value="" style="width:97%"></td>
+			<td style="width:12%">申请部门</td>
+			<td><input name="" type="text" value="" style="width:97%"></td>
+			<td style="width:12%">申请人</td>
+			<td><input name="" type="text" value="" style="width:97%"></td>
+		</tr>
+		<tr>
+			<td style="width:12%">招聘职位</td>
+			<td><input name="" type="text" value="" style="width:97%"></td>
+			<td style="width:12%">招聘人数</td>
+			<td><input name="" type="text" value="" style="width:97%"></td>
+			<td style="width:12%">期望到岗日期</td>
+			<td><input name="" type="text" value="" style="width:97%"></td>
+		</tr>
+		<tr>
+			<td rowspan="2" style="width:12%">申请原因</td>
+			<td rowspan="2" colspan="2" class="jobbox">
+				<input name="" type="checkbox" value="" style="" id="reason1"><label for="reason1">新增职位</label><br>
+				<input name="" type="checkbox" value="" style="" id="reason2"><label for="reason2">空缺、调离职位补充</label><br>
+				<input name="" type="checkbox" value="" style="" id="reason3"><label for="reason3">已有职位人员增加</label><br>
+				<input name="" type="checkbox" value="" style="" id="reason4"><label for="reason4">其他<input name="" type="text" value="" style="width:100px;border-bottom:1px solid #000;text-align:left"></label>
+			</td>
+			<td style="width:12%;height:70px;">招聘形式</td>
+			<td colspan="2" class="jobbox">
+				<input name="" type="checkbox" value="" style="" id="job1"><label for="job1" style="margin-right:18px;">内部招聘</label>
+				<input name="" type="checkbox" value="" style="" id="job2"><label for="job2">网站招聘</label><br>
+				<input name="" type="checkbox" value="" style="" id="job3"><label for="job3">培训机构推荐</label>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:12%;height:70px;">简历筛选</td>
+			<td colspan="2" class="jobbox">
+				<input name="" type="checkbox" value="" style="" id="resume1"><label for="resume1" style="margin-right:18px;">部门筛选</label>
+				<input name="" type="checkbox" value="" style="" id="resume2"><label for="resume2">人力资源部筛选</label><br>
+				<input name="" type="checkbox" value="" style="" id="resume3"><label for="resume3">简历下载</label>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" style="height:20px;background:#d9d9d9;font-size:16px;text-align:left;padding-left:10px;">职位要求</td>
+		</tr>
+		<tr>
+			<td style="width:12%">性别</td>
+			<td><input name="" type="text" value="" style="width:97%"></td>
+			<td style="width:12%">年龄</td>
+			<td><input name="" type="text" value="" style="width:97%"></td>
+			<td style="width:12%">薪酬</td>
+			<td><input name="" type="text" value="" style="width:97%"></td>
+		</tr>
+		<tr>
+			<td style="width:12%">学历</td>
+			<td colspan="2"><input name="" type="text" value="" style="width:97%"></td>
+			<td style="width:12%">专业</td>
+			<td colspan="2"><input name="" type="text" value="" style="width:97%"></td>
+		</tr>
+		<tr>
+			<td style="width:12%">优先条件</td>
+			<td colspan="5"><input name="" type="text" value="" style="width:95%;text-align:left"></td>
+		</tr>
+		<tr>
+			<td style="width:12%">补充说明</td>
+			<td colspan="5"><input name="" type="text" value="" style="width:95%;text-align:left"></td>
+		</tr>
+		<tr>
+			<td colspan="6" style="height:20px;background:#d9d9d9;font-size:16px;text-align:left;padding-left:10px;">工作职责（另附职位描述、任职要求电子版）</td>
+		</tr>
+		<tr>
+			<td colspan="6" style="height:250px"><textarea name=""></textarea></td>
+		</tr>
+		<tr>
+			<td colspan="6" style="height:20px;background:#d9d9d9;font-size:16px;text-align:left;padding-left:10px;">审批意见</td>
+		</tr>
+		<tr>
+			<td style="width:12%">部门领导意见</td>
+			<td colspan="2"><input name="" type="text" value="" style="width:97%"></td>
+			<td style="width:12%">人力资源部意见</td>
+			<td colspan="2"><input name="" type="text" value="" style="width:97%"></td>
+		</tr>
+		<tr>
+			<td style="width:12%">直属副总意见</td>
+			<td colspan="2"><input name="" type="text" value="" style="width:97%"></td>
+			<td style="width:12%">总经理批示</td>
+			<td colspan="2"><input name="" type="text" value="" style="width:97%"></td>
+		</tr>
+	</table>
+</body>
+</html>

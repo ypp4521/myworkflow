@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+	h2{
+		text-align: center;
+	}
+	.main{
+		width: 660px;
+		border: 2px #000 solid;
+		border-collapse: collapse;
+		font-size: 14px;
+		font-family: "微软雅黑";
+		text-align: center;
+		margin: 0 auto;
+	}
+	input{
+		border: none;
+		font-size: 14px;
+		outline: none;
+		text-align: center;
+		font-family: "微软雅黑";
+	}
+	.main td{
+		border: 1px #000 solid;
+		height: 40px;
+		width: 16%;
+
+	}
+	.main tr{
+		width: 100%;
+	}
+	/* .main td input,.main td label{
+		float: left;
+		margin-left: 10px;
+		margin-top: 10px;
+	} */
+	.font0{
+		font-size: 0;
+	}
+	.font0 input,.font0 label{
+		font-size: 14px;
+		margin-right: 10px;
+		vertical-align: middle;
+	}
+	.leavedate input{
+		width: 35px;
+		border: none;
+		border-bottom: 1px solid #000;
+		outline: none;
+		text-align: right;
+	}
+	input[type=checkbox]{
+		margin-top: -4px;
+	}
+	#otherreason{
+		width: 40px;
+		border: none;
+		border-bottom: 1px solid #000;
+		outline: none;
+		text-align: left;
+	}
+	.leavetxt{
+		width:95%;
+		height:90%;
+		resize:none;
+		border:none;
+		outline:none;
+		font-family: "微软雅黑";
+		font-size:14px;
+	}
+</style>
+<link rel="stylesheet" href="../../../static/sheet/bootstrap.min.css">
+<link rel="stylesheet" href="../../../static/sheet/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css">
+<script type="text/javascript" src="../../../static/sheet/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../../../static/sheet/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../static/sheet/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="../../../static/sheet/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+</head>
+<body>
+<script>
+	$(function(){
+		$('#begin_date,#end_date').datetimepicker({
+    	format: 'yyyy-mm-dd hh:ii',
+		weekStart: 1,
+		todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		forceParse: 0,
+        showMeridian: 1
+	}).on('changeDate', function(ev){
+			if($('#begin_date').val()!=""&&$('#end_date').val()){
+				  var a=$('#begin_date').val();
+				  var b=$('#end_date').val();
+	    		  a=a.replace(/-/g,'/');
+	    		  b=b.replace(/-/g,'/');
+	    		  var time1 = new Date(a);
+	    		  var time2 = new Date(b);
+	    		  time1=time1.getTime();
+	    		  time2=time2.getTime();
+	    		  c=time2-time1;
+	    		  hour=Math.round(c/(1000*3600));
+	    		  c=c/(1000*3600*24);
+	    		  d=Math.round(c);
+	    		  $('#countday').val(c);
+	    		  if(c>d){
+	    		  	var lefthour=hour-(d*24);
+	    		  }else{
+	    		  	var lefthour=hour-((d-1)*24);
+	    		  }
+	    		  if(lefthour==24)
+	    		  	lefthour=0;
+	    		  $('#countday').val(d);
+	    		  $('#counthour').val(lefthour);
+			}
+		});
+	})
+</script>
+	<h2>请假申请表</h2>
+	<table class="main">
+		<tr>
+			<td>填表日期</td>
+			<td><input  name="input_date" type="text" title="填表日期" value="" qplugins="text" orghide="0" orgalign="left" orgwidth="150" data-options="validType:&#39;length&#39;" class="easyui-validatebox" style="width:97%"></td>
+			<td style="width:18%">部门</td>
+			<td><input name="dept" type="text" title="部门" value="" qplugins="text" orghide="0" orgalign="left" orgwidth="150" data-options="validType:&#39;length&#39;" class="easyui-validatebox" style="width:97%"></td>
+			<td>申请人</td>
+			<td><input name="user_info" type="text" title="申请人" value="" qplugins="text" orghide="0" orgalign="left" orgwidth="150" data-options="validType:&#39;length&#39;" class="easyui-validatebox" style="width:97%"></td>
+		</tr>
+		<tr>
+			<td>请假日期</td>
+			<td colspan="5" class="leavedate">
+				<input id="begin_date" type="text" placeholder="年/月/日/时" style="width:120px">
+				 至<input id="end_date" type="text" placeholder="年/月/日/时" style="width:120px">
+				 共<input id="countday" type="text" style="width:30px">天<input id="counthour" type="text" style="width:30px">时
+			</td>
+		</tr>
+		<tr>
+			<td>请假类型</td>
+			<td colspan="5" class="font0">
+				<input type="radio" id="check1" name="oper_type" value=""><label for="check1">事假</label>
+				<input type="radio" id="check2" name="oper_type" value=""><label for="check2">病假</label>　　
+				<input type="radio" id="check3" name="oper_type" value=""><label for="check3">婚假</label>　　
+				<input type="radio" id="check4" name="oper_type" value=""><label for="check4">丧假</label>　　
+				<input type="radio" id="check5" name="oper_type" value=""><label for="check5">年假</label>　　
+				<input type="radio" id="check6" name="oper_type" value=""><label for="check6">产假</label>　
+				<input type="radio" id="check7" name="oper_type" value=""><label for="check7">其他 <input type="text" id="otherreason"></label>　　　　　
+			</td>
+		</tr>
+		<tr>
+			<td style="height:90px">请假事由</td>
+			<td colspan="5"><textarea class="leavetxt" title="请假事由" name="reason_info" qplugins="textarea" value="" orgrich="0" orgfontsize="" orgwidth="300" orgheight="80"></textarea></td>
+		</tr>
+		<tr>
+			<td style="height:70px">部门领导意见</td>
+			<td colspan="2"><input name="dept_opinion" type="text" title="部门领导意见" value="" qplugins="text" orghide="0" orgalign="left" orgwidth="150" data-options="validType:&#39;length&#39;" class="easyui-validatebox" style="width:97%"></td>
+			<td style="height:70px">人力资源部意见</td>
+			<td colspan="2"><input name="hr_opinion" type="text" title="人力资源部意见" value="" qplugins="text" orghide="0" orgalign="left" orgwidth="150" data-options="validType:&#39;length&#39;" class="easyui-validatebox" style="width:97%"></td>
+		</tr>
+		<tr>
+			<td style="height:70px">直属副总意见</td>
+			<td colspan="2"><input name="dgm_opinion" type="text" title="直属副总意见" value="" qplugins="text" orghide="0" orgalign="left" orgwidth="150" data-options="validType:&#39;length&#39;" class="easyui-validatebox" style="width:97%"></td>
+			<td style="height:70px">总经理批示</td>
+			<td colspan="2"><input name="gm_opinion" type="text" title="总经理批示" value="" qplugins="text" orghide="0" orgalign="left" orgwidth="150" data-options="validType:&#39;length&#39;" class="easyui-validatebox" style="width:97%"></td>
+		</tr>
+	</table>
+</body>
+</html>

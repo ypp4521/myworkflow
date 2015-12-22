@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/appdo/!svn/ver/41638/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/meta/service/impl
+END
+MetaCustomServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/appdo/!svn/ver/41219/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/meta/service/impl/MetaCustomServiceImpl.java
+END
+MetaBusiServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/appdo/!svn/ver/41926/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/meta/service/impl/MetaBusiServiceImpl.java
+END
+MetaTenantServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/appdo/!svn/ver/41370/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/meta/service/impl/MetaTenantServiceImpl.java
+END
+MetaCustomFieldServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/appdo/!svn/ver/41745/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/meta/service/impl/MetaCustomFieldServiceImpl.java
+END

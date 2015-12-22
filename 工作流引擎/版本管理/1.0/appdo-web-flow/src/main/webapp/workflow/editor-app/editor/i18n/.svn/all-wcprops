@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/editor-app/editor/i18n
+END
+translation_en_us.js
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/editor-app/editor/i18n/translation_en_us.js
+END
+translation_de.js
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/editor-app/editor/i18n/translation_de.js
+END
+translation_signavio_en_us.js
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/editor-app/editor/i18n/translation_signavio_en_us.js
+END
+translation_signavio_de.js
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/editor-app/editor/i18n/translation_signavio_de.js
+END

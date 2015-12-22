@@ -1,0 +1,853 @@
+/* CSS Document */
+p,h1,h2,h3,h4,h5,h6,ul,li,a,dt,dd,dl,em,ol,td,th,tr,tt,form{
+margin:0 ;
+padding:0;
+}
+ul,li{
+list-style:none;
+}
+/***************��վ���������á���ʼ��**************************/
+.ul_bg{
+background:url("");
+}
+.ul_bg_none{
+background:none;
+}
+.ul_bg_bottom{
+background:bottom;
+}
+.ul_bg_center{
+background:center;
+}
+.ul_bg_left{
+background:left;
+}
+.ul_bg_right{
+background:right;
+}
+.ul_bg_top{
+background:top;
+}
+.ul_bg_no_repeat{
+background:no-repeat;
+}
+.ul_bg_repeat{
+background:repeat;
+}
+.ul_bg_fixed{
+background-attachment:fixed;
+}
+.ul_bg_scroll{
+background-attachment:scroll;
+}
+.ul_bg_color{
+background-color:#ffffff;
+}
+.ul_bg_position_bottom{
+background-position:bottom;
+}
+.ul_bg_position_center{
+background-position:center;
+}
+.ul_bg_position_left{
+background-position:left;
+}
+.ul_bg_position_right{
+background-position:right;
+}
+.ul_bg_position_top{
+background-position:top;
+}
+.ul_bg_repeat_x{
+background-repeat:repeat-x;
+}
+.ul_bg_repeat_y{
+background-repeat:repeat-y;
+}
+.ul_background_repeat{
+background-repeat:no-repeat;
+}
+/***************��վ���������á�����**************************/
+
+/***************���û������ǰ�����������Ƕȡ���ʼ��************/
+.ul_azimuth{
+azimuth:left-side;
+ }
+/***************���û������ǰ�����������Ƕȡ�����************/
+
+/*****************�߿����á���ʼ��******************************/
+.ul_boder{
+border:1px;
+}
+.ul_boder_color{
+border:#000000;
+}
+.ul_boder_medium{
+border:medium; /*�м�;��ӹ;����*/
+}
+.ul_boder_thin{
+border:thin ;  /* ����;ϸ��;�ݵ�*/
+}
+.ul_boder_thick{
+border:thick; /*���;�ֵ�*/
+}
+.ul_boder_dashed{
+border:dashed ; /*����*/
+}
+.ul_boder_dotted{
+border: dotted ; /*1.���ߵ� 2.�е��*/
+}
+.ul_boder_double{
+border: double; /*˫�ߵ�*/
+}
+.ul_boder_groove{
+border: groove ; /*��;��*/
+}
+.ul_boder_hidden{
+border: hidden ; /*����*/
+}
+.ul_boder_inset{
+border: inset ; /*Ƕ��,����*/
+}
+.ul_boder_none{
+border: none;
+}
+.ul_boder_outset{
+border:outset ; /*���,����ʼ��,����*/
+}
+.ul_boder_ridge{
+border: ridge; /*�ݼ�,ɽ��,ɽ�� 2. (������)¡��;(��)��;��¢*/
+}
+.ul_boder_solid{
+border:solid ; /*ֱ�ߣ�ʵ��*/
+}
+.ul_boder_bottom{
+border-bottom:1px;
+}
+.ul_boder_collapse{
+border-collapse:collapse; /*���ı߿��Ƿ񱻺ϲ�Ϊһ����һ�ı߿�*/
+}
+.ul_boder_separate{
+border-collapse:separate; /*�߿�ᱻ�ֿ�,����ģʽ*/
+}
+.ul_boder_left{
+border-left:1px;
+}
+.ul_boder_right{
+border-right:1px;
+}
+.ul_boder_top{
+border-top:1px;
+}
+.ul_boder_spacing{
+border-spacing:10px 50px; /*�������ڵ�Ԫ��ı߿��ľ��루�����ڡ��߿���롱ģʽ��*/
+}
+/*****************�߿����á�����******************************/
+
+/*******************�߾�����á���ʼ��**************************/
+.ul_left{
+left:1px;
+}
+.ul_right{
+right:1px;
+}
+.ul_top{
+top:1px;
+}
+.ul_bottom{
+bottom:1px;
+}
+/*******************�߾�����á�����**************************/
+
+/*******************���ñ������λ�á���ʼ��******************/
+.ul_caption_bottom{
+caption-side:bottom;
+}
+.ul_caption_left{
+caption-side:left;
+}
+.ul_caption_right{
+caption-side:right;
+}
+.ul_caption_top{
+caption-side:top;
+}
+/*******************���ñ������λ�á�����******************/
+
+/************�涨Ԫ�ص���һ�಻��������Ԫ�ء���ʼ��********/
+.ul_clear_both{
+clear:both;
+}
+.ul_clear_left{
+clear:left;
+}
+.ul_clear_none{
+clear:none;
+}
+.ul_clear_right{
+clear:right;
+}
+/************�涨Ԫ�ص���һ�಻��������Ԫ�ء�����********/
+
+/****************���þ�Զ�λԪ�ء���ʼ��**********************/
+
+.ul_clip_rect{
+clip:rect('0', '60px', '5px', '80px');
+}
+.ul_clip_auto{
+clip:rect(auto, auto, auto, auto);
+}
+/****************���þ�Զ�λԪ�ء�����**********************/
+
+/*************������ɫ���á���ʼ��*****************************/
+.ul_color_b{
+color:#000000;
+}
+.ul_color_w{
+color:#FFFFFF;
+}
+.ul_color_6{
+color:#666666;
+}
+.ul_color_c{
+color:#cccccc;
+}
+.ul_color_e{
+color:#eeeeee;
+}
+.ul_color_r{
+color:#FF0000;
+}
+/*************������ɫ���á�����*****************************/
+
+/**�����ı���ͼ����֣�����������һ��Ԫ���е�ʲô�ط�����ʼ��* ��  ����1  ��*/
+.ul_content{
+content:open-quote;
+}
+/**�����ı���ͼ����֣�����������һ��Ԫ���е�ʲô�ط�������**/
+
+/*******ĳ��ѡȡ��ÿ�γ��ֵļ�����������Ĭ��������1 ����ʼ��***/
+.ul_increment{
+counter-increment:none;
+
+}
+.ul_reset{
+counter-reset:none; /*��������ĳ��ѡ�������ִ���ļ�������ֵ��Ĭ��Ϊ 0*/
+}
+/*******ĳ��ѡȡ��ÿ�γ��ֵļ�����������Ĭ��������1 ������***/
+
+
+/*************�����ʽ��ɰ������ϳ�������Ч������ϣ�ʹ�û���������Ϣ������������Ķ�����ʼ��******************/
+.ul_cue{
+cue:url("");
+}
+.ul_cue_after{
+cue-after:url();
+}
+.ul_cue_before{
+cue-before:url();
+}
+/*************�����ʽ��ɰ������ϳ�������Ч������ϣ�ʹ�û���������Ϣ������������Ķ�������******************/
+
+/*************Ҫ��ʾ�Ĺ������ͣ���״������ʼ��************/
+.ul_cursor_auto{
+cursor:auto;  /*Ĭ�ϡ���������õĹ�ꡣ*/
+}
+.ul_cursor_crosshair{
+cursor:crosshair;  /*������Ϊʮ���ߡ�*/
+}
+.ul_cursor_default{
+cursor:default; /*Ĭ�Ϲ�꣨ͨ����һ����ͷ��*/
+}
+.ul_cursor_e{
+cursor:e-resize; /*�˹��ָʾ���ο�ı�Ե�ɱ����ң������ƶ��������Ҽ�ͷ��*/
+}
+.ul_cursor_help{
+cursor:help;  /*�˹��ָʾ���õİ���ͨ����һ���ʺŻ�һ�����򣩡�*/
+}
+.ul_cursor_move{
+cursor:move; /*�˹��ָʾĳ����ɱ��ƶ���*/
+}
+.ul_cursor_ne{
+cursor:ne-resize; /*�˹��ָʾ���ο�ı�Ե�ɱ����ϼ������ƶ�����/������*/
+}
+.ul_cursor_n{
+cursor:n-resize; /*�˹��ָʾ���ο�ı�Ե�ɱ����ϣ������ƶ���*/
+}
+.ul_cursor_nw{
+cursor:nw-resize; /*�˹��ָʾ���ο�ı�Ե�ɱ����ϼ������ƶ�����/������*/
+}
+.ul_cursor_pointer{
+cursor:pointer; /*������Ϊָʾ���ӵ�ָ�루һֻ�֣�*/
+}
+.ul_cursor_se{
+cursor:se-resize; /*�˹��ָʾ���ο�ı�Ե�ɱ����¼������ƶ�����/������*/
+}
+.ul_cursor_s{
+cursor:s-resize; /*�˹��ָʾ���ο�ı�Ե�ɱ������ƶ�����/������*/
+}
+.ul_cursor_sw{
+cursor:sw-resize; /*�˹��ָʾ���ο�ı�Ե�ɱ����¼������ƶ�����/������*/
+}
+.ul_cursor_text{
+cursor:text;  /*�˹��ָʾ�ı���*/
+}
+.ul_cursor_wait{
+cursor:wait; /*�˹��ָʾ������æ��ͨ����һֻ���ɳ©����*/
+}
+.ul_cursor_{
+cursor:w-resize; /*�˹��ָʾ���ο�ı�Ե�ɱ������ƶ���������*/
+}
+/*************Ҫ��ʾ�Ĺ������ͣ���״��������************/
+
+/************�涨�ı��ķ��� / ��д���򡾿�ʼ��*************/
+.ul_direction_ltr{
+direction:ltr; /*Ĭ�ϡ��ı���������ҡ�*/
+}
+.ul_direction_rtl{
+direction:rtl; /*�ı�������ҵ���*/
+}
+/************�涨�ı��ķ��� / ��д���򡾿�ʼ��*************/
+
+/******���Թ涨Ԫ��Ӧ����ɵĿ�����͡���ʼ��**************/
+.ul_display_block{
+display:block; /*��Ԫ�ؽ���ʾΪ�鼶Ԫ�أ���Ԫ��ǰ�����л��з�*/
+}
+.ul_display_compact{
+display:compact; /*CSS ����ֵ compact����������ȱ���㷺֧�֣��Ѿ��� CSS2.1 ��ɾ��*/
+}
+.ul_display_inline{
+display:inline; /*Ĭ�ϡ���Ԫ�ػᱻ��ʾΪ����Ԫ�أ�Ԫ��ǰ��û�л��з�*/
+}
+.ul_display_table{
+display:inline-table; /*��Ԫ�ػ���Ϊ�����������ʾ������ <table>�������ǰ��û�л��з�*/
+}
+.ul_display_item{
+display:list-item; /*��Ԫ�ػ���Ϊ�б���ʾ��*/
+}
+.ul_display_marker{
+display:marker; /*CSS ����ֵ marker����������ȱ���㷺֧�֣��Ѿ��� CSS2.1 ��ɾ��*/
+}
+.ul_display_none{
+display:none;
+}
+.ul_display_run{
+display:run-in; /*��Ԫ�ػ�����������Ϊ�鼶Ԫ�ػ�����Ԫ����ʾ��*/
+}
+.ul_display_table2{
+display:table; /*��Ԫ�ػ���Ϊ�鼶�������ʾ������ <table>�������ǰ����л��з�*/
+}
+.ul_display_caption{
+display:table-caption; /*��Ԫ�ػ���Ϊһ����������ʾ������ <caption>��*/
+}
+.ul_display_cell{
+display:table-cell; /*��Ԫ�ػ���Ϊһ�����Ԫ����ʾ������ <td> �� <th>��*/
+}
+.ul_display_column{
+display:table-column; /*��Ԫ�ػ���Ϊһ����Ԫ������ʾ������ <col>��*/
+}
+.ul_display_group{
+display:table-column-group; /*��Ԫ�ػ���Ϊһ�������еķ�������ʾ������ <colgroup>����*/
+}
+.ul_display_footer{
+display:table-footer-group; /*��Ԫ�ػ���Ϊһ�������еķ�������ʾ������ <tfoot>����*/
+}
+.ul_display_header{
+display:table-header-group; /*��Ԫ�ػ���Ϊһ�������еķ�������ʾ������ <thead>����*/
+}
+.ul_display_row{
+display:table-row; /*��Ԫ�ػ���Ϊһ���������ʾ������ <tr>����*/
+}
+.ul_display_row2{
+display:table-row-group; /*��Ԫ�ػ���Ϊһ�������еķ�������ʾ������ <tbody>����*/
+}
+/******���Թ涨Ԫ��Ӧ����ɵĿ�����͡�����**************/
+
+/**********���û������ǰ��������Դ���ǡ���ʼ��***********/
+
+.ul_elevation_above{
+elevation: 75deg
+}
+/**********���û������ǰ��������Դ���ǡ�����***********/
+
+
+/*******�Ƿ���ʾ����еĿյ�Ԫ�񣨽����ڡ�����߿�ģʽ������ʼ��***********/
+.ul_empty_cells_hide{
+empty-cells:hide;  /*Ĭ�ϡ����ڿյ�Ԫ����Χ���Ʊ߿�*/
+}
+.ul_empty_cells_show{
+empty-cells:show; /*�ڿյ�Ԫ����Χ���Ʊ߿�*/
+}
+/*******�Ƿ���ʾ����еĿյ�Ԫ�񣨽����ڡ�����߿�ģʽ������ʼ��***********/
+
+/************����Ԫ�����ĸ����򸡶�����ʼ��************/
+.ul_float_left{
+float:left;
+}
+.ul_float_none{
+float:none;
+}
+.ul_float_right{
+float:right;
+}
+/************����Ԫ�����ĸ����򸡶�������************/
+
+/********���������С�����壬��ɫ������ֵ����ʼ��*****/
+.ul_font{
+font:12px bolder   "����";
+}
+.ul_font_family{
+font-family:"������"; 
+}
+.ul_font_size{
+font-size:12px;
+}
+.ul_font_adjust{
+font-size-adjust:0.58; /*����Ϊĳ��Ԫ�ع涨һ�� aspect ֵ������Ϳ��Ա�����ѡ����� x-height*/
+}
+.ul_font_stretch_normal{
+font-stretch:normal; /*���ԿɶԵ�ǰ�� font-family �����������Ρ�Ĭ��ֵ�������ű�������Ϊ��׼��*/
+}
+.ul_font_stretch_wider{
+font-stretch:wider; /*����չ��������Ϊ���һ������չֵ*/
+}
+.ul_font_stretch_narrower{
+font-stretch:narrower; /*��������������Ϊ���һ��������ֵ*/
+}
+/*���� font-family �����ű���"ultra-condensed" ������ֵ���� "ultra-expanded" ����խ��ֵ��*/
+
+.ul_font_style_normal{
+font-style:normal; /*��������ķ��Ĭ��ֵ���������ʾһ����׼��������ʽ��*/
+}
+.ul_font_style_italic{
+font-style:italic; /*���������ʾһ��б���������ʽ��*/
+}
+.ul_font_style_oblique{
+font-style:oblique; /*���������ʾһ����б��������ʽ��*/
+}
+.ul_font_variant_normal{
+font-variant:normal;  /*����С�ʹ�д��ĸ��������ʾ�ı�������ζ�����е�Сд��ĸ��ᱻת��Ϊ��д����������ʹ��С�ʹ�д�������ĸ�������ı���ȣ�������ߴ��С��Ĭ��ֵ�����������ʾһ����׼�����塣*/
+}
+.ul_font_variant_small{
+font-variant:small-caps; /*���������ʾС�ʹ�д��ĸ�����塣*/
+}
+.ul_font_weight{
+font-weight:bolder;
+}
+/********���������С�����壬��ɫ������ֵ������*****/
+
+/***********************���øߵ�����ֵ����ʼ��*******/
+.ul_height{
+height:100%;
+height:auto !important;
+}
+/***********************���øߵ�����ֵ������*******/
+
+/*******���ӻ�����ַ��Ŀհף��ַ��ࣩ����ʼ��**/
+
+.ul_letter_normal{
+letter-spacing:normal; /*Ĭ�ϡ��涨�ַ��û�ж���Ŀռ䡣*/
+}
+.ul_letter_px{
+letter-spacing:2px;
+}
+/*******���ӻ�����ַ��Ŀհף��ַ��ࣩ������**/
+
+/**************�����м�ľ��루�иߣ�����ʼ��******/
+.ul_line{
+line-height:180%;
+}
+/**************�����м�ľ��루�иߣ�������******/
+
+/**********��һ���������������е��б����ԡ���ʼ��**/
+.ul_list_none{
+list-style:none; /* 	�ޱ�ǡ�*/
+}
+.ul_list_image{
+list-style-image:url(""); /*����ʹ��ͼ�����滻�б���ı��*/
+}
+.ul_list_inside{
+list-style-position:inside; /*�б���Ŀ��Ƿ������ı����ڣ��һ����ı���ݱ�Ƕ��롣*/
+}
+.ul_list_outside{
+list-style-position:outside; /*Ĭ��ֵ�����ֱ��λ���ı�����ࡣ�б���Ŀ��Ƿ������ı����⣬�һ����ı�����ݱ�Ƕ��롣*/
+}
+.ul_list_circle{
+list-style-type:circle; /*����ǿ���Բ��*/
+}
+.ul_list_armenian{
+list-style-type:armenian; /*��ͳ���������Ǳ�ŷ�ʽ*/
+}
+.ul_list_cjk{
+list-style-type:cjk-ideographic; /*�򵥵ı�������*/
+}
+.ul_list_decimal{
+list-style-type:decimal; /*��������֡�*/
+}
+.ul_list_zero{
+list-style-type:decimal-leading-zero; /*0��ͷ�����ֱ�ǡ�(01, 02, 03, �ȡ�)*/
+}
+.ul_list_disc{
+list-style-type:disc; /*Ĭ�ϡ������ʵ��Բ��*/
+}
+.ul_list_georgian{
+list-style-type:georgian; /*��ͳ�������Ǳ�ŷ�ʽ(an, ban, gan, �ȡ�)*/
+}
+.ul_list_hebrew{
+list-style-type:hebrew; /*��ͳ��ϣ������ŷ�ʽ*/
+}
+.ul_list_hiragana{
+list-style-type:hiragana; /*����ǣ�a, i, u, e, o, ka, ki, �ȡ�������Ƭ����*/
+}
+.ul_list_iroha{
+list-style-type:hiragana-iroha; /*����ǣ�i, ro, ha, ni, ho, he, to, �ȡ�������Ƭ����*/
+}
+.ul_list_katakana{
+list-style-type:katakana; /*����ǣ�A, I, U, E, O, KA, KI, �ȡ�������Ƭ����*/
+}
+.ul_list_iroha2{
+list-style-type:katakana-iroha; /*����ǣ�i, ro, ha, ni, ho, he, to, �ȡ�������Ƭ����*/
+}
+.ul_list_alpha{
+list-style-type:lower-alpha; /*СдӢ����ĸThe marker is lower-alpha (a, b, c, d, e, �ȡ�)*/
+}
+.ul_list_greek{
+list-style-type:lower-greek; /*Сдϣ����ĸ(alpha, beta, gamma, �ȡ�)*/
+}
+.ul_list_latin{
+list-style-type:lower-latin; /*Сд������ĸ(a, b, c, d, e, �ȡ�)*/
+}
+.ul_list_roman{
+list-style-type:lower-roman; /*Сд��������(i, ii, iii, iv, v, �ȡ�)*/
+}
+.ul_list_square{
+list-style-type:square; /*�����ʵ�ķ��顣*/
+}
+.ul_list_alpha2{
+list-style-type:upper-alpha; /*��дӢ����ĸThe marker is upper-alpha (A, B, C, D, E, �ȡ�)*/
+}
+.ul_list_latin2{
+list-style-type:upper-latin; /*��д������ĸ(A, B, C, D, E, �ȡ�)*/
+}
+.ul_list_roman{
+list-style-type:upper-roman; /*��д��������(I, II, III, IV, V, �ȡ�)*/
+}
+/**********��һ���������������е��б����ԡ�����**/
+
+
+/**************����������߾����ԡ���ʼ��*********/
+.ul_margin{
+margin:5px;
+}
+.ul_margin_bottom{
+margin-bottom:10px;
+}
+.ul_margin_left{
+margin-left:10px;
+}
+.ul_margin_right{
+margin-right:10px;
+}
+.ul_margin_top{
+margin-top:10px;
+}
+/**************����������߾����ԡ�����*********/
+
+
+/************����������С�߶ȣ���ȡ���ʼ��****/
+.ul_max_h{
+max-height:100px;
+}
+.ul_max_w{
+max-width:100px;
+}
+.ul_min_h{
+min-height:100px;
+}
+.ul_min_w{
+min-width:100px;
+}
+/************����������С�߶ȣ���ȡ�����****/
+
+/*********��ӡ�ο�����ʼ��***********************/
+.ul_orphans{
+orphans:5px; /*����Ԫ�ط���ҳ��ײ�ʱ������������ı�����*/
+}
+/*********��ӡ�ο�������***********************/
+
+/********���������ǻ�����Ԫ����Χ��һ���ߣ�λ�ڱ߿��Ե����Χ������ͻ��Ԫ�ص����á���ʼ��********************/
+
+.ul_outline{
+outline:outline:#00ff00 dotted thick;
+}
+.ul_outline_dashed{
+outline-style:dashed; /*��������������*/
+}
+.ul_outline_dotted{
+outline-style:dotted; /*�����״��������*/
+}
+.ul_outline_double{
+outline-style:double; /*����˫��������˫�ߵĿ�ȵ�ͬ�� outline-width ��ֵ��*/
+}
+.ul_outline_groove{
+outline-style:groove; /*���� 3D ������������Ч��ȡ���� outline-color ֵ��*/
+}
+.ul_outline_inset{
+outline-style:inset; /*���� 3D ������������Ч��ȡ���� outline-color ֵ��*/
+}
+.ul_outline_outset{
+outline-style:outset; /*���� 3D ͹����������Ч��ȡ���� outline-color ֵ��*/
+}
+.ul_outline_ridge{
+outline-style:ridge; /*���� 3D ͹����������Ч��ȡ���� outline-color ֵ��*/
+}
+.ul_outline_solid{
+outline-style:solid; /*����ʵ��������*/
+}
+.ul_outline_inherit{
+outline-style:inherit; /*�涨Ӧ�ôӸ�Ԫ�ؼ̳�������ʽ�����á�*/
+}
+.ul_outline_color{
+outline-color:#000099;
+}
+.ul_outline_thin{ 
+outline-width:thin; /*�涨ϸ������*/
+}
+.ul_outline_thick{
+outline-width:thick; /*�涨�ֵ�������*/
+}
+.ul_outline_medium{
+outline-width:medium; /*Ĭ�ϡ��涨�еȵ�������*/
+}
+.ul_outline_px{
+outline-width:3px;
+}
+/********���������ǻ�����Ԫ����Χ��һ���ߣ�λ�ڱ߿��Ե����Χ������ͻ��Ԫ�ص����á�����********************/
+
+/********���������Ԫ�ؿ�ʱ��������顾��ʼ��******/
+.ul_hidden{
+overflow:hidden; /*���ݻᱻ�޼����������������ǲ��ɼ�ġ�*/
+}
+.ul_inherit{
+overflow:inherit; /*�涨Ӧ�ôӸ�Ԫ�ؼ̳� overflow ���Ե�ֵ��*/
+}
+.ul_scroll{
+overflow:scroll; /*���ݻᱻ�޼����������������ʾ�������Ա�鿴��������ݡ�auto����һ��*/
+}
+.ul_overflow_visible{
+overflow:visible; /*Ĭ��ֵ�����ݲ��ᱻ�޼����������Ԫ�ؿ�֮�⡣*/
+}
+/********���������Ԫ�ؿ�ʱ��������顾����******/
+
+
+/************���������ڱ߾����ԡ���ʼ��***********/
+.ul_padding{
+padding:10px;
+}
+.ul_padding2{
+padding-left:10px;
+}
+.ul_padding_bottom{
+padding-bottom:10px;
+}
+.ul_padding_left{
+padding-left:10px;
+}
+.ul_padding_top{
+padding-top:10px;
+}
+.ul_padding_right{
+padding-right:10px;
+}
+/************���������ڱ߾����ԡ�����***********/
+
+/***************�涨Ԫ�صĶ�λ���͡���ʼ��*******/
+
+.ul_absolute{
+position:absolute; /*��ɾ�Զ�λ��Ԫ�أ������ static ��λ����ĵ�һ����Ԫ�ؽ��ж�λ��Ԫ�ص�λ��ͨ�� "left", "top", "right" �Լ� "bottom" ���Խ��й涨��*/
+}
+.ul_fixed{
+position:fixed;   /*��ɾ�Զ�λ��Ԫ�أ��������������ڽ��ж�λ��Ԫ�ص�λ��ͨ�� "left", "top", "right" �Լ� "bottom" ���Խ��й涨��*/
+}
+.ul_relative{
+position:relative; /*�����Զ�λ��Ԫ�أ����������λ�ý��ж�λ����ˣ�"left:20" ����Ԫ�ص� LEFT λ����� 20 ���ء�*/
+}
+.ul_static{
+position:static; /*Ĭ��ֵ��û�ж�λ��Ԫ�س�����������У����� top, bottom, left, right ���� z-index ��������*/
+}
+/***************�涨Ԫ�صĶ�λ���͡�����*******/
+
+/************������͡���ʼ��*******************/
+
+.ul_quotes{
+quotes: '"' '"' "'" "'";  /*�����ֲ������*/
+}
+/************������͡���ʼ��*******************/
+
+
+/****��ʾ���Ԫ���С��е��㷨���򡾿�ʼ��**/
+.ul_table_automatic{
+table-layout:automatic; /*Ĭ�ϡ��п���ɵ�Ԫ�������趨��*/
+}
+.ul_table_fixed{
+table-layout:fixed; /*�п��ɱ���Ⱥ��п���趨��*/
+}
+/****��ʾ���Ԫ���С��е��㷨���򡾽���**/
+
+/****�涨Ԫ���е��ı���ˮƽ���뷽ʽ����ʼ��***/
+.ul_text_center{
+text-align:center;
+}
+.ul_text_justify{
+text-align:justify; /*ʵ�����˶����ı�Ч��*/
+}
+.ul_text_left{
+text-align:left;
+}
+.ul_text_right{
+text-align:right;
+}
+/****�涨Ԫ���е��ı���ˮƽ���뷽ʽ������***/
+
+/**********���Թ涨��ӵ��ı������Ρ���ʼ��***/
+.ul_text_blink{
+text-decoration:blink; /*������˸���ı��� ie8������*/
+}
+.ul_text_through{
+text-decoration:line-through; /*���崩���ı��µ�һ���ߡ�*/
+}
+.ul_text_none{
+text-decoration:none;
+}
+.ul_text_overline{
+text-decoration:overline; /*�����ı��ϵ�һ���ߡ�*/
+}
+.ul_text_underline{
+text-decoration:underline; /*�����ı��µ�һ���ߡ�*/
+} 
+/**********���Թ涨��ӵ��ı������Ρ�����***/
+
+/*******�涨�ı����������ı�������ʼ��***/
+.ul_indent{
+text-indent:2em;
+}
+/*******�涨�ı����������ı����������***/
+
+/*********�涨��ӵ��ı�����ӰЧ��ʼ��***/
+.ul_shadow{
+text-shadow: 0 -1px 1px #145072; 
+}
+/*********�涨��ӵ��ı�����ӰЧ�����***/
+
+/********���Կ����ı��Ĵ�Сд����ʼ��*******/
+
+.ul_text_capitalize{
+text-transform:capitalize; /*�ı��е�ÿ�������Դ�д��ĸ��ͷ��*/
+}
+.ul_text_lowercase{
+text-transform:lowercase; /*�����޴�д��ĸ������Сд��ĸ��*/
+}
+.ul_text_none2{
+text-transform:none; /*Ĭ�ϡ��������Сд��ĸ�ʹ�д��ĸ�ı�׼���ı���*/
+}
+.ul_text_uppercase{
+text-transform:uppercase; /*������д�д��ĸ��*/
+}
+/********���Կ����ı��Ĵ�Сд������*******/
+
+/*****�����ı��ķ��򡾿�ʼ��***************/
+.ul_unicode_override{
+unicode-bidi:bidi-override; /*���Ϊ����Ԫ�ش���һ������*/
+}
+.ul_unicode_embed{
+unicode-bidi:embed; /*����˫���㷨��򿪸�����һ��Ƕ��*/
+}
+.ul_unicode_normal{
+unicode-bidi:normal; /*Ԫ�ز����˫���㷨�򿪸��ӵ�һ��Ƕ�ס�*/
+}
+/*****�����ı��ķ��򡾽���***************/
+
+/*********����Ԫ�صĴ�ֱ���뷽ʽ����ʼ��*****************/
+.ul_vertical_baseline{
+vertical-align:baseline; /*Ĭ�ϡ�Ԫ�ط����ڸ�Ԫ�صĻ����ϡ�*/
+}
+.ul_vertical_bottom{
+vertical-align:bottom; /*��Ԫ�صĶ�����������͵�Ԫ�صĶ��˶��롣*/
+}
+.ul_vertical_middle{
+vertical-align:middle; /*�Ѵ�Ԫ�ط����ڸ�Ԫ�ص��в���*/
+}
+.ul_vertical_sub{
+vertical-align:sub; /*��ֱ�����ı����±ꡣ*/
+}
+.ul_vertical_super{
+vertical-align:super; /*��ֱ�����ı����ϱ�*/
+}
+.ul_vertical_bottom2{
+vertical-align:text-bottom; /*��Ԫ�صĵ׶��븸Ԫ������ĵ׶˶��롣*/
+}
+.ul_vertical_top{
+vertical-align:top; /*��Ԫ�صĶ������������Ԫ�صĶ��˶���*/
+}
+.ul_vertical_top2{
+vertical-align:text-top; /*��Ԫ�صĶ����븸Ԫ������Ķ��˶���*/
+}
+.ul_vertical_height{
+vertical-align:180%;
+}
+/*********����Ԫ�صĴ�ֱ���뷽ʽ������*****************/
+
+/**********���Թ涨Ԫ���Ƿ�ɼ�ʼ��*****************/
+.ul_visible{
+visibility:visible; /*Ĭ��ֵ��Ԫ���ǿɼ�ġ�*/
+}
+.ul_collapse{
+visibility:collapse; /*���ڱ��Ԫ����ʹ��ʱ����ֵ��ɾ��һ�л�һ�У��������Ӱ����Ĳ��֡����л���ռ�ݵĿռ��������������ʹ�á�����ֵ�����������Ԫ���ϣ������Ϊ "hidden"��*/
+}
+.ul_hidden2{
+visibility:hidden; /*Ԫ���ǲ��ɼ�ġ�*/
+}
+/**********���Թ涨Ԫ���Ƿ�ɼ����*****************/
+
+
+/**********������δ���Ԫ���ڵĿհס���ʼ��************/
+.ul_white_normal{
+white-space:normal; /*Ĭ�ϡ��հ׻ᱻ��������ԡ�*/
+}
+.ul_white_nowrap{
+white-space:nowrap; /*�ı����ỻ�У��ı�������ͬһ���ϼ���ֱ������ <br> ��ǩΪֹ��*/
+}
+.ul_white_pre{
+white-space:pre; /*�հ׻ᱻ���������������Ϊ��ʽ���� HTML �е� <pre> ��ǩ��*/
+}
+.ul_white_wrap{
+white-space:pre-wrap; /*�����հ׷����У�������ؽ��л��С�*/
+}
+.ul_white_line{
+white-space:pre-line; /*�ϲ��հ׷����У����Ǳ������з�*/ 
+}
+/**********������δ���Ԫ���ڵĿհס�����************/
+
+/*******���ӻ���ٵ��ʼ�Ŀհס���ʼ��*****************/
+.ul_spacing{
+word-spacing:normal; /*Ĭ�ϡ����嵥�ʼ�ı�׼�ռ䡣*/
+}
+.ul_spacing_w{
+word-spacing:10px;
+}
+/*******���ӻ���ٵ��ʼ�Ŀհס�����*****************/
+
+/***********����Ԫ�صĶѵ�˳�򡾿�ʼ��******************/
+.ul_z_index{
+z-index:9999;
+}
+/***********����Ԫ�صĶѵ�˳�򡾽���******************/
+
+/***********************����λ�͸߶ȡ�************************/
+.ul_wei_gao{
+height:auto !important;
+height:100%;
+visibility:visible;
+overflow:hidden;
+position:relative;
+}

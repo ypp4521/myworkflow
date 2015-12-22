@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/appdo/!svn/ver/42048/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/impl
+END
+BpmTodoServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/appdo/!svn/ver/42034/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/impl/BpmTodoServiceImpl.java
+END
+WorkflowTraceServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/appdo/!svn/ver/41808/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/impl/WorkflowTraceServiceImpl.java
+END
+WorkflowSendPostServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/appdo/!svn/ver/41850/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/impl/WorkflowSendPostServiceImpl.java
+END
+WorkflowUserServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/appdo/!svn/ver/41850/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/impl/WorkflowUserServiceImpl.java
+END
+BpmTodoTaskServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/appdo/!svn/ver/42048/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/impl/BpmTodoTaskServiceImpl.java
+END
+BpmApproveServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/appdo/!svn/ver/42034/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/impl/BpmApproveServiceImpl.java
+END
+WorkflowServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/appdo/!svn/ver/41853/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/impl/WorkflowServiceImpl.java
+END
+BpmTodoProcinstServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/appdo/!svn/ver/42034/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/impl/BpmTodoProcinstServiceImpl.java
+END
+WorkflowProcessDefinitionServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/flow/service/impl/WorkflowProcessDefinitionServiceImpl.java
+END

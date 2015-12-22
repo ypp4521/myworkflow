@@ -1,0 +1,37 @@
+
+针对员工异动工单的特殊性，对接口保存做以下变动：
+增加接口参数
+createUserName 制单人姓名
+createUserId        制单人id
+old_dept_user     原部门负责人id
+old_bgm_user     原直属副总id
+now_dept_user   现部门负责人id
+now_bgm_user   现直属副总id
+
+原接口参数
+userId 和 user_info 依旧存放申请人信息
+
+★其中 userType参数，仅在新增工单保存，提交使用；其他情况目前均不需要传递，否则将影响数据的正确性
+
+
+
+92 环境 拷贝 到158 正式环境
+
+SELECT * FROM ACT_GE_BYTEARRAY  WHERE `ID_` IN (137502,137503,137505,137506);
+SELECT 
+  * 
+FROM
+  ACT_RE_DEPLOYMENT a 
+WHERE a.ID_ = 137504 ;
+
+SELECT * FROM ACT_RE_MODEL a WHERE a.ID_ = 137501;
+
+SELECT * FROM ACT_RE_PROCDEF a WHERE a.DEPLOYMENT_ID_ = 137504;
+
+SELECT 
+  * 
+FROM
+  wf_meta_flow_field a 
+WHERE a.wf_meta_customs_id = 41 ;
+
+SELECT * FROM `meta_tenant` WHERE modelid = 137501;

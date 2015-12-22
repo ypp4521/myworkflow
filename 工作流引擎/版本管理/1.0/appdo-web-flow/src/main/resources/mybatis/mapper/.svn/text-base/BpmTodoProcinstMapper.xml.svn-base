@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.zywx.appdo.flow.dao.impl.BpmTodoProcInstDaoImpl">
+	<resultMap id="BaseResultMap" type="org.zywx.appdo.flow.entity.BpmTodoProcInst">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="title" property="title" jdbcType="VARCHAR" />
+		<result column="code" property="code" jdbcType="VARCHAR" />
+		<result column="instanceid" property="instanceid" jdbcType="VARCHAR" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="metaid" property="metaid" jdbcType="VARCHAR" />
+		<result column="createtime" property="createtime" jdbcType="VARCHAR" />
+		<result column="remark" property="remark" jdbcType="VARCHAR" />
+		<result column="tenantId" property="tenantId" jdbcType="VARCHAR" />
+		<result column="busiid" property="busiid" jdbcType="VARCHAR" />
+		<result column="businessKey" property="businessKey" jdbcType="VARCHAR" />
+		<result column="busipath" property="busipath" jdbcType="VARCHAR" />
+		<result column="businame" property="businame" jdbcType="VARCHAR" />
+		<result column="year" property="year" jdbcType="VARCHAR" />
+		<result column="userId" property="userId" jdbcType="VARCHAR" />
+		<result column="userName" property="userName" jdbcType="VARCHAR" />
+		<result column="isback" property="isback" jdbcType="VARCHAR" />
+		<result column="isrevoke" property="isrevoke" jdbcType="VARCHAR" />
+		<result column="busicode" property="busicode" jdbcType="VARCHAR" />
+
+		<result column="ID_" property="ID_" jdbcType="VARCHAR" />
+		<result column="PROC_INST_ID_" property="PROC_INST_ID_"
+			jdbcType="VARCHAR" />
+		<result column="BUSINESS_KEY_" property="BUSINESS_KEY_"
+			jdbcType="VARCHAR" />
+		<result column="PROC_DEF_ID_" property="PROC_DEF_ID_" jdbcType="VARCHAR" />
+		<result column="START_TIME_" property="START_TIME_" jdbcType="TIMESTAMP" />
+		<result column="END_TIME_" property="END_TIME_" jdbcType="TIMESTAMP" />
+		<result column="DURATION_" property="DURATION_" jdbcType="BIGINT" />
+		<result column="START_USER_ID_" property="START_USER_ID_"
+			jdbcType="VARCHAR" />
+		<result column="START_ACT_ID_" property="START_ACT_ID_"
+			jdbcType="VARCHAR" />
+		<result column="SUPER_PROCESS_INSTANCE_ID_" property="SUPER_PROCESS_INSTANCE_ID_"
+			jdbcType="VARCHAR" />
+		<result column="DELETE_REASON_" property="DELETE_REASON_"
+			jdbcType="VARCHAR" />
+		<result column="NAME_" property="NAME_" jdbcType="VARCHAR" />
+		<result column="START_ACT_ID_" property="START_ACT_ID_"
+			jdbcType="VARCHAR" />
+
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, title, code, instanceid, name, metaid, createtime,
+		remark,
+		tenantId,busiid,businessKey,businame,year,userId,userName,isback,isrevoke,busicode,
+		ID_,PROC_INST_ID_,BUSINESS_KEY_,PROC_DEF_ID_,START_TIME_,END_TIME_,DURATION_,START_USER_ID_,
+		START_ACT_ID_,END_ACT_ID_,SUPER_PROCESS_INSTANCE_ID_,DELETE_REASON_,NAME_
+	</sql>
+	<select id="getById" resultMap="BaseResultMap" parameterType="java.util.Map">
+		select
+		<include refid="Base_Column_List" />
+		from v_bpm_todo_procinst
+		where id = #{id,jdbcType=INTEGER}
+		and tenantId =
+		#{tenantId,jdbcType=VARCHAR}
+	</select>
+	<select id="getByIds" resultMap="BaseResultMap" parameterType="java.util.Map">
+		select
+		<include refid="Base_Column_List" />
+		from v_bpm_todo_procinst
+		where tenantId =
+		#{tenantId,jdbcType=BIGINT} AND id IN
+		<foreach collection="list" item="item" index="index" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+	<select id="getPage" resultMap="BaseResultMap" parameterType="java.util.Map">
+		select
+		<include refid="Base_Column_List" />
+		from v_bpm_todo_procinst
+		<where>
+			<include refid="conditionSql" />
+		</where>
+		order by ${sort} ${dir}
+	</select>
+	<select id="getByMap" resultMap="BaseResultMap" parameterType="java.util.Map">
+		select
+		<include refid="Base_Column_List" />
+		from v_bpm_todo_procinst
+		<where>
+			<include refid="conditionSql" />
+		</where>
+		order by ${sort} ${dir}
+	</select>
+
+	<select id="isFinished" resultMap="BaseResultMap" parameterType="java.util.Map">
+		select
+		<include refid="Base_Column_List" />
+		from v_bpm_todo_procinst
+		<where>
+			<include refid="conditionSql" />
+			and END_TIME_ is not null
+		</where>
+		order by ${sort} ${dir}
+	</select>
+
+	<select id="isunFinished" resultMap="BaseResultMap"
+		parameterType="java.util.Map">
+		select
+		<include refid="Base_Column_List" />
+		from v_bpm_todo_procinst
+		<where>
+			<include refid="conditionSql" />
+			and END_TIME_ is null
+		</where>
+		order by ${sort} ${dir}
+	</select>
+
+	<sql id="conditionSql">
+		<if test="title != null and  title != '' ">
+			and title = #{title}
+		</if>
+		<if test="code != null and  code != '' ">
+			and code = #{code}
+		</if>
+		<if test="instanceid != null and  instanceid != '' ">
+			and instanceid = #{instanceid}
+		</if>
+		<if test="name != null and  name != '' ">
+			and name = #{name}
+		</if>
+		<if test="metaid != null and  metaid != '' ">
+			and metaid = #{metaid}
+		</if>
+		<if test="createtime != null and  createtime != '' ">
+			and createtime = #{createtime}
+		</if>
+		<if test="remark != null and  remark != '' ">
+			and remark = #{remark}
+		</if>
+		<if test="tenantId != null and  tenantId != '' ">
+			and tenantId = #{tenantId}
+		</if>
+		<if test="busiid != null and  busiid != '' ">
+			and busiid = #{busiid}
+		</if>
+		<if test="businessKey != null and  businessKey != '' ">
+			and businessKey = #{businessKey}
+		</if>
+		<if test="userId != null and  userId != '' ">
+			and userId = #{userId}
+		</if>
+		<if test="userName != null and  userName != '' ">
+			and userName = #{userName}
+		</if>
+		<if test="year != null and  year != '' ">
+			and year = #{year}
+		</if>
+		<if test="isrevoke != null and  isrevoke != '0' ">
+			and isrevoke = #{isrevoke}
+		</if>
+		<if test="isback != null and  isback != '0' ">
+			and isback = #{isback}
+		</if>
+		<if test="ID_ != null and  ID_ != '' ">
+			and ID_ = #{ID_}
+		</if>
+		<if test="PROC_INST_ID_ != null and  PROC_INST_ID_ != '' ">
+			and PROC_INST_ID_ = #{PROC_INST_ID_}
+		</if>
+		<if test="START_USER_ID_ != null and  START_USER_ID_ != '' ">
+			and START_USER_ID_ = #{START_USER_ID_}
+		</if>
+	</sql>
+</mapper>

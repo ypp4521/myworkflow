@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<!-- 基于Druid数据库链接池的数据源配置 -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="clone">
+		<!-- 基本属性driverClassName、 url、user、password -->
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${flow.jdbc.url}" />
+		<property name="username" value="${flow.jdbc.username}" />
+		<property name="password" value="${flow.jdbc.password}" />
+		
+		<!-- 配置初始化大小、最小、最大 -->
+		<!-- 通常来说，只需要修改initialSize、minIdle、maxActive -->
+		<!-- 初始化时建立物理连接的个数，缺省值为0 -->
+		<property name="initialSize" value="${druid.initialSize}" />
+		<!-- 最小连接池数量 -->
+		<property name="minIdle" value="${druid.minIdle}" />
+		<!-- 最大连接池数量，缺省值为8 -->
+		<property name="maxActive" value="${druid.maxActive}" />
+
+		<!-- 获取连接时最大等待时间，单位毫秒。配置了maxWait之后，缺省启用公平锁，并发效率会有所下降，如果需要可以通过配置useUnfairLock属性为true使用非公平锁。 -->
+		<property name="maxWait" value="${druid.maxWait}" />
+		
+		<!-- 
+			有些数据库连接的时候有超时限制（MySQL连接在8小时后断开），或者由于网络中断等原因，连接池的连接会出现失效的情况，这时候可以设置一个testWhileIdle参数为true，
+			如果检测到当前连接不活跃的时间超过了timeBetweenEvictionRunsMillis，则去手动检测一下当前连接的有效性，在保证确实有效后才加以使用。
+			在检测活跃性时，如果当前的活跃时间大于minEvictableIdleTimeMillis，则认为需要关闭当前连接。当
+			然，为了保证绝对的可用性，你也可以使用testOnBorrow为true（即在每次获取Connection对象时都检测其可用性），不过这样会影响性能。
+		-->
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒（3600000:为1小时） -->
+		<property name="timeBetweenEvictionRunsMillis" value="${druid.timeBetweenEvictionRunsMillis}" />
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒(300000:为5分钟) -->
+		<property name="minEvictableIdleTimeMillis" value="${druid.minEvictableIdleTimeMillis}" />
+		<!-- 用来检测连接是否有效的sql，要求是一个查询语句。如果validationQuery为null，testOnBorrow、testOnReturn、testWhileIdle都不会其作用。 -->
+		<property name="validationQuery" value="${druid.validationQuery}" />
+		<!-- 申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。建议配置为true，不影响性能，并且保证安全性。-->
+      	<property name="testWhileIdle" value="${druid.testWhileIdle}" />
+      	<!-- 申请连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。缺省值:true -->
+      	<property name="testOnBorrow" value="${druid.testOnBorrow}" />
+      	<!-- 归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。缺省值:false -->
+      	<property name="testOnReturn" value="${druid.testOnReturn}" />
+      	
+      	<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		<!-- 是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle。在mysql5.5以下的版本中没有PSCache功能，建议关闭掉。5.5及以上版本有PSCache，建议开启。缺省值:false -->
+		<property name="poolPreparedStatements" value="${druid.poolPreparedStatements}" />
+		<!-- 要启用PSCache，必须配置大于0，当大于0时，poolPreparedStatements自动触发修改为true。在Druid中，不会存在Oracle下PSCache占用内存过多的问题，可以把这个数值配置大一些，比如说100。 -->
+		<property name="maxPoolPreparedStatementPerConnectionSize" value="${druid.maxPoolPreparedStatementPerConnectionSize}" />
+		
+		<!-- 连接泄漏监测(忘记close) 配置removeAbandoned对性能会有一些影响，建议怀疑存在泄漏之后再打开 -->
+		<!-- 打开removeAbandoned功能 -->
+		<property name="removeAbandoned" value="${druid.removeAbandoned}" />
+		<!-- 1800秒，也就是30分钟 -->
+		<property name="removeAbandonedTimeout" value="${druid.removeAbandonedTimeout}" />
+		<!-- 关闭abanded连接时输出错误日志 -->
+		<property name="logAbandoned" value="${druid.logAbandoned}" />		
+		<!-- 解密密码必须要配置的项 -->
+		<property name="connectionProperties" value="${druid.connectProperties}" />
+		<property name="filters" value="${druid.filters}" />
+		<property name="proxyFilters">
+			<list>
+				<ref bean="stat-filter" />
+				<!--<ref bean="wall-filter" />-->
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 监控拦截器 -->
+	<bean id="stat-filter" class="com.alibaba.druid.filter.stat.StatFilter">
+		<!-- slowSqlMillis用来配置SQL慢的标准，执行时间超过slowSqlMillis的就是慢,并且通过日志输出执行慢的SQL，配置是5秒 -->
+		<property name="slowSqlMillis" value="${druid.slowSqlMillis}" />
+		<property name="logSlowSql" value="${druid.logSlowSql}" />
+		<!-- 日志Sql合并配置 -->
+		<property name="mergeSql" value="${druid.mergeSql}" />
+	</bean>
+
+	<!-- modify by xingshen.zhao 初次安装时屏蔽掉，配置防御SQL注入攻击 
+	<bean id="wall-filter" class="com.alibaba.druid.wall.WallFilter">
+		<property name="dbType" value="${druid.dbType}" />
+	</bean>
+	-->
+	<!-- 将数据源映射到sqlSessionFactory中 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="configLocation" value="classpath:mybatis/mybatis-config.xml" />
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- SqlSession模板类实例 -->
+	<bean id="sessionTemplate" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="close">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
+	
+	<!--======= 事务配置 Begin ================= -->
+	<!-- 事务管理器（由Spring管理MyBatis的事务） -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<!-- 关联数据源 -->
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="create*" propagation="REQUIRED"/>
+			<tx:method name="update*" propagation="REQUIRED"/>
+			<tx:method name="delete*" propagation="REQUIRED"/>
+			<tx:method name="save*" propagation="REQUIRED"/>
+			<tx:method name="deploy*" propagation="REQUIRED"/>
+			<tx:method name="*Task" propagation="REQUIRED"/>
+			<tx:method name="activate*" propagation="REQUIRED"/>
+			<tx:method name="suspend*" propagation="REQUIRED"/>
+			<tx:method name="*" read-only="true"/>
+		</tx:attributes>
+	</tx:advice>
+	<!-- 切面配置 -->
+	<aop:config proxy-target-class="true">
+		<aop:advisor pointcut="execution(* org.zywx.appdo..biz..*Biz.*(..))" advice-ref="txAdvice" />
+		<aop:advisor pointcut="execution(* org.zywx.appdo..service..*Service.*(..))" advice-ref="txAdvice" />
+	</aop:config>	
+	<!-- 注解事务 -->
+	<!-- <tx:annotation-driven transaction-manager="transactionManager" />-->
+	<!--======= 事务配置 End =================== -->
+	   <!-- Activiti begin -->
+    <bean id="processEngineConfiguration" class="org.zywx.appdo.workflow.WorkflowSpringProcessEngineConfiguration">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="transactionManager" ref="transactionManager"/>
+        <property name="databaseSchemaUpdate" value="true"/>
+        <property name="jobExecutorActivate" value="false"/>
+        <property name="history" value="full"/>
+        <property name="processDefinitionCacheLimit" value="10"/>
+
+        <!-- mail -->
+        <property name="mailServerHost" value="localhost"/>
+        <property name="mailServerUsername" value="bpm"/>
+        <property name="mailServerPassword" value="000000"/>
+        <property name="mailServerPort" value="2025"/>
+
+        <!-- UUID作为主键生成策略
+        <property name="idGenerator" ref="uuidGenerator" />
+        -->
+
+        <!-- 生成流程图的字体 -->
+        <property name="activityFontName" value="${diagram.activityFontName}"/>
+        <property name="labelFontName" value="${diagram.labelFontName}"/>
+
+        <!-- 缓存支持
+        <property name="processDefinitionCache">
+            <bean class="me.kafeitu.demo.activiti.util.cache.DistributedCache" />
+        </property>-->
+
+        <!-- 自动部署 -->
+        <property name="deploymentResources">
+            <list>
+                <value>classpath*:/deployments/*</value>
+            </list>
+        </property>
+
+        <!-- 自定义表单字段类型 -->
+        <property name="customFormTypes">
+            <list>
+                <bean class="org.zywx.appdo.workflow.UsersFormType"/>
+            </list>
+        </property>
+
+        <!-- JPA 
+        <property name="jpaEntityManagerFactory" ref="entityManagerFactory" />
+        <property name="jpaHandleTransaction" value="false" />
+        <property name="jpaCloseEntityManager" value="false" />
+		-->
+        <!-- 全局事件 
+        <property name="typedEventListeners">
+            <map>
+                <entry key="VARIABLE_CREATED" >
+                    <list>
+                        <ref bean="variableCreateListener"/>
+                    </list>
+                </entry>
+            </map>
+        </property>
+        -->
+        <property name="customSessionFactories">
+            <list>
+                <bean class="org.zywx.appdo.workflow.CustomUserEntityManagerFactory">
+                    <property name="customUserEntityManager" ref="customUserEntityManager"/>
+                </bean>
+                <bean class="org.zywx.appdo.workflow.CustomGroupEntityManagerFactory">
+                    <property name="customGroupEntityManager" ref="customGroupEntityManager"/>
+                </bean>
+            </list>
+        </property>
+        <property name="customDefaultBpmnParseHandlers">
+			<list>
+				<bean class="org.zywx.appdo.workflow.ExtensionUserTaskParseHandler" />
+			</list>
+		</property>
+
+    </bean>
+
+    <bean id="processEngine" class="org.activiti.spring.ProcessEngineFactoryBean">
+        <property name="processEngineConfiguration" ref="processEngineConfiguration"/>
+    </bean>
+
+    <bean id="repositoryService" factory-bean="processEngine" factory-method="getRepositoryService"/>
+    <bean id="runtimeService" factory-bean="processEngine" factory-method="getRuntimeService"/>
+    <bean id="formService" factory-bean="processEngine" factory-method="getFormService"/>
+    <bean id="identityService" factory-bean="processEngine" factory-method="getIdentityService"/>
+    <bean id="taskService" factory-bean="processEngine" factory-method="getTaskService"/>
+    <bean id="historyService" factory-bean="processEngine" factory-method="getHistoryService"/>
+    <bean id="managementService" factory-bean="processEngine" factory-method="getManagementService"/>
+</beans>

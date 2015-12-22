@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/appdo/!svn/ver/39564/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/static/sheet/bootstrap-datetimepicker-master
+END
+package.json
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/appdo/!svn/ver/39564/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/static/sheet/bootstrap-datetimepicker-master/package.json
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/appdo/!svn/ver/39564/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/static/sheet/bootstrap-datetimepicker-master/LICENSE
+END
+.travis.yml
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/appdo/!svn/ver/39564/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/static/sheet/bootstrap-datetimepicker-master/.travis.yml
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/appdo/!svn/ver/39564/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/static/sheet/bootstrap-datetimepicker-master/.gitignore
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/appdo/!svn/ver/39564/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/static/sheet/bootstrap-datetimepicker-master/README.md
+END
+minify.sh
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/appdo/!svn/ver/39564/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/static/sheet/bootstrap-datetimepicker-master/minify.sh
+END
+.gitattributes
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/appdo/!svn/ver/39564/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/static/sheet/bootstrap-datetimepicker-master/.gitattributes
+END
+bower.json
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/appdo/!svn/ver/39564/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/static/sheet/bootstrap-datetimepicker-master/bower.json
+END
+.npmignore
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/appdo/!svn/ver/39564/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/static/sheet/bootstrap-datetimepicker-master/.npmignore
+END

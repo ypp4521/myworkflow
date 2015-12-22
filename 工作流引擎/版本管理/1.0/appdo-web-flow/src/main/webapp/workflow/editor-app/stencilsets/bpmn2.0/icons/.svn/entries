@@ -1,0 +1,92 @@
+10
+
+dir
+41642
+http://svn.3g2win.com/svn/appdo/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/editor-app/stencilsets/bpmn2.0/icons
+http://svn.3g2win.com/svn/appdo
+
+
+
+2015-09-25T03:40:58.716358Z
+36735
+keli.li
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+942de7de-16d0-4a6e-ba26-731a43b108fe
+
+activity
+dir
+
+artifact
+dir
+
+catching
+dir
+
+connector
+dir
+
+dataobject
+dir
+
+diagram.png
+file
+
+
+
+
+2015-11-20T01:05:27.495000Z
+a45eb3b001a734be2e95a0f1bb0a6f83
+2015-09-25T03:40:58.716358Z
+36735
+keli.li
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+206
+
+endevent
+dir
+
+gateway
+dir
+
+startevent
+dir
+
+swimlane
+dir
+
+throwing
+dir
+

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/appdo/!svn/ver/42048/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/mybatis/mapper
+END
+MetaCustomMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/appdo/!svn/ver/41277/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/mybatis/mapper/MetaCustomMapper.xml
+END
+DoDynamicTable.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/appdo/!svn/ver/40188/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/mybatis/mapper/DoDynamicTable.xml
+END
+BpmTodoTaskMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/appdo/!svn/ver/42048/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/mybatis/mapper/BpmTodoTaskMapper.xml
+END
+BpmApproveMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/appdo/!svn/ver/41219/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/mybatis/mapper/BpmApproveMapper.xml
+END
+MetaBusiMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/appdo/!svn/ver/42049/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/mybatis/mapper/MetaBusiMapper.xml
+END
+MetaTenantMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/appdo/!svn/ver/40962/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/mybatis/mapper/MetaTenantMapper.xml
+END
+BpmTodoProcinstMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/appdo/!svn/ver/42034/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/mybatis/mapper/BpmTodoProcinstMapper.xml
+END
+MetaCustomFieldMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/appdo/!svn/ver/41745/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/mybatis/mapper/MetaCustomFieldMapper.xml
+END
+BpmTodoMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/appdo/!svn/ver/41745/appcan_4.0/emm/trunk/appdo-web-flow/src/main/resources/mybatis/mapper/BpmTodoMapper.xml
+END

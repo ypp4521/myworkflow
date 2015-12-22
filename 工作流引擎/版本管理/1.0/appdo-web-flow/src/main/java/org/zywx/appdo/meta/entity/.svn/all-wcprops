@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/appdo/!svn/ver/41370/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/meta/entity
+END
+MetaTenant.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/meta/entity/MetaTenant.java
+END
+MetaTemplate.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/appdo/!svn/ver/40306/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/meta/entity/MetaTemplate.java
+END
+MetaBusi.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/appdo/!svn/ver/41277/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/meta/entity/MetaBusi.java
+END
+MetaCustom.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/appdo/!svn/ver/41219/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/meta/entity/MetaCustom.java
+END
+MetaCustomField.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/appdo/!svn/ver/41745/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/meta/entity/MetaCustomField.java
+END

@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/appdo/!svn/ver/41361/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/workflow
+END
+CustomUserEntityManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/appdo/!svn/ver/41361/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/workflow/CustomUserEntityManager.java
+END
+CustomGroupEntityManagerFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/workflow/CustomGroupEntityManagerFactory.java
+END
+WorkflowCompleteTaskCmd.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/appdo/!svn/ver/40442/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/workflow/WorkflowCompleteTaskCmd.java
+END
+CustomGroupEntityManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/appdo/!svn/ver/41361/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/workflow/CustomGroupEntityManager.java
+END
+CustomUserEntityManagerFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/workflow/CustomUserEntityManagerFactory.java
+END
+ExtensionOperation.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/appdo/!svn/ver/37048/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/workflow/ExtensionOperation.java
+END
+ExtensionUserTaskParseHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/appdo/!svn/ver/40439/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/workflow/ExtensionUserTaskParseHandler.java
+END
+UsersFormType.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/appdo/!svn/ver/41361/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/workflow/UsersFormType.java
+END
+WorkflowTaskQueryImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/workflow/WorkflowTaskQueryImpl.java
+END
+WorkflowProcessEngineImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/appdo/!svn/ver/40188/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/workflow/WorkflowProcessEngineImpl.java
+END
+MetaCustomController.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/workflow/MetaCustomController.java
+END
+WorkflowTaskServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/appdo/!svn/ver/40188/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/workflow/WorkflowTaskServiceImpl.java
+END
+WorkflowSpringProcessEngineConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/appdo/!svn/ver/40264/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/workflow/WorkflowSpringProcessEngineConfiguration.java
+END
+WorkflowTaskService.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/java/org/zywx/appdo/workflow/WorkflowTaskService.java
+END

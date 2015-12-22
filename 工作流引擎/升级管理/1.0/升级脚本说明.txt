@@ -1,0 +1,45 @@
+1、升级脚本升级
+	流程发生变动涉及的表：
+	meta_tenant       流程本地配置表 modelkey
+	meta_busi         关联流程 flowid 
+	ACT_RE_MODEL      流程模型表
+	ACT_GE_BYTEARRAY  流程配置xml文件和流程图配置表
+	ACT_RE_PROCDEF    流程已部署记录表
+	ACT_RE_DEPLOYMENT 流程部署表
+	wf_meta_flow_field 流程节点模版字段绑定关系表
+	
+	相关查询SQL：
+		先按照下面的sql查询出来之后，对原数据进行备份保存之后删除；
+		查询出的数据 进行sql脚本本地保存 插入
+		升级执行脚本将会使用到
+	//根据模版单据类型查询模版相关信息 关键字段 modelid=22507+3
+	SELECT * FROM meta_tenant a WHERE a.`metaid` = '32';
+	//关键字段 flowid
+	SELECT * FROM meta_busi a WHERE a.`metaid` = '32';
+	//在升级之前在测试环境对流程的配置必须要配置正确
+	//查询流程部署表 如果更新则使用 update 语句
+	select * from ACT_RE_DEPLOYMENT a where a.ID_ = 22507+3;
+	//流程模型表
+	select * from ACT_RE_MODEL a where a.ID_ = 22507;
+	//流程已部署记录表
+	select * from ACT_RE_PROCDEF a where a.DEPLOYMENT_ID_ = 22507+3;
+	//流程配置xml文件和流程图配置表 ID_ 跟 部署表对应的ID_ 相差 数字2
+	SELECT * FROM ACT_GE_BYTEARRAY a WHERE a.DEPLOYMENT_ID_ = 22507+3 OR a.`ID_` IN (22507+1,22507+2);	
+	//查询修改后的流程节点字段绑定信息
+	select * from wf_meta_flow_field a where a.wf_meta_customs_id = '32';
+	
+	相关删除SQL：
+	delete FROM meta_tenant  WHERE `metaid` = '32';
+	delete FROM meta_busi WHERE `metaid` = '32';
+	delete FROM wf_meta_flow_field where wf_meta_customs_id = '32';
+	把查询的SQL本地脚本 执行 测试
+	
+	
+2、模版字段相关修改
+	meta_custom_field  模版字段表
+	wf_meta_flow_field 流程节点模版字段绑定关系表
+	
+3、变更当前任务执行人修改
+	ACT_RU_TASK 当前任务节点表
+	ACT_RU_VARIABLE 当前任务节点变量
+	ACT_HI_VARINST 历史任务节点变量

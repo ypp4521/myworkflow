@@ -1,0 +1,35 @@
+# driverClassName
+jdbc.driverClassName=com.mysql.jdbc.Driver
+# mysql dialect
+dialectClass=org.zywx.appdo.common.core.mybatis.dialect.MySqlDialect
+# emm JDBC set
+flow.jdbc.url=jdbc:mysql://192.168.1.71:3306/emm_flow_new?useUnicode=true&amp;characterEncoding=UTF-8
+flow.jdbc.username=root
+flow.jdbc.password=123456
+#druid   
+druid.initialSize=3  
+druid.minIdle=20
+druid.maxActive=100   
+druid.maxWait=60000
+druid.timeBetweenEvictionRunsMillis=60000
+druid.minEvictableIdleTimeMillis=300000
+druid.validationQuery=SELECT 1  
+druid.testWhileIdle=true  
+druid.testOnBorrow=false  
+druid.testOnReturn=false  
+druid.poolPreparedStatements=true  
+druid.maxPoolPreparedStatementPerConnectionSize=20  
+druid.removeAbandoned=false
+druid.removeAbandonedTimeout=1800
+druid.logAbandoned=true
+druid.connectProperties=config.decrypt=false
+druid.filters=log4j,config
+druid.slowSqlMillis=5000
+druid.logSlowSql=true
+druid.mergeSql=false
+druid.dbType=mysql
+#flowSetting
+export.diagram.path=/tmp/appdo/flow
+diagram.http.url=http://localhost:10000
+diagram.activityFontName=\u5B8B\u4F53
+diagram.labelFontName=\u5B8B\u4F53

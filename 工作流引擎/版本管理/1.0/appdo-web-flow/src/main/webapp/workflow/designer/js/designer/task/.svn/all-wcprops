@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/task
+END
+BaseTask.js
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/task/BaseTask.js
+END
+Task.js
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/task/Task.js
+END
+BusinessRuleTask.js
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/task/BusinessRuleTask.js
+END
+ScriptTask.js
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/task/ScriptTask.js
+END
+UserTask.js
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/task/UserTask.js
+END
+CallActivity.js
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/task/CallActivity.js
+END
+MailTask.js
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/task/MailTask.js
+END
+ManualTask.js
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/task/ManualTask.js
+END
+ServiceTask.js
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/task/ServiceTask.js
+END
+ReceiveTask.js
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/appdo/!svn/ver/36735/appcan_4.0/emm/trunk/appdo-web-flow/src/main/webapp/workflow/designer/js/designer/task/ReceiveTask.js
+END

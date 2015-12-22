@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.zywx.appdo.meta.dao.impl.MetaTenantDaoImpl" >
+  <resultMap id="BaseResultMap" type="org.zywx.appdo.meta.entity.MetaTenant" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="tenantId" property="tenantId" jdbcType="VARCHAR" />
+    <result column="metaid" property="metaid" jdbcType="INTEGER" />
+    <result column="modelname" property="modelname" jdbcType="VARCHAR" />
+    <result column="singler" property="singler" jdbcType="VARCHAR" />
+    <result column="singletype" property="singletype" jdbcType="CHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="modelid" property="modelid" jdbcType="VARCHAR" />
+    <result column="modelkey" property="modelkey" jdbcType="VARCHAR" />
+    <result column="deploystate" property="deploystate" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, tenantId, metaid, modelname, singler, singletype, createtime, remark, modelid, 
+    modelkey, deploystate
+  </sql>
+  <insert id="insert" parameterType="org.zywx.appdo.meta.entity.MetaTenant" useGeneratedKeys="true" keyProperty="id" >
+    insert into meta_tenant (tenantId, metaid, modelname, 
+      singler, singletype, createtime, 
+      remark, modelid, modelkey, 
+      deploystate)
+    values (#{tenantId,jdbcType=VARCHAR}, #{metaid,jdbcType=INTEGER}, #{modelname,jdbcType=VARCHAR}, 
+      #{singler,jdbcType=VARCHAR}, #{singletype,jdbcType=CHAR}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{remark,jdbcType=VARCHAR}, #{modelid,jdbcType=VARCHAR}, #{modelkey,jdbcType=VARCHAR}, 
+      #{deploystate,jdbcType=CHAR})
+  </insert>
+  <insert id="batchInsert" parameterType="java.util.List" >
+    insert into meta_tenant (tenantId, metaid, modelname, 
+      singler, singletype, createtime, 
+      remark, modelid, modelkey, 
+      deploystate)values 
+    <foreach collection="list" item="item" index="index" separator=","> 
+    (#{item.tenantId,jdbcType=VARCHAR}, #{item.metaid,jdbcType=INTEGER}, #{item.modelname,jdbcType=VARCHAR}, 
+      #{item.singler,jdbcType=VARCHAR}, #{item.singletype,jdbcType=CHAR}, #{item.createtime,jdbcType=TIMESTAMP}, 
+      #{item.remark,jdbcType=VARCHAR}, #{item.modelid,jdbcType=VARCHAR}, #{item.modelkey,jdbcType=VARCHAR}, 
+      #{item.deploystate,jdbcType=CHAR})
+    </foreach>
+  </insert>
+  <update id="update" parameterType="org.zywx.appdo.meta.entity.MetaTenant" >
+    update meta_tenant
+    set metaid = #{metaid,jdbcType=INTEGER},
+      modelname = #{modelname,jdbcType=VARCHAR},
+      singler = #{singler,jdbcType=VARCHAR},
+      singletype = #{singletype,jdbcType=CHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR},
+      modelid = #{modelid,jdbcType=VARCHAR},
+      modelkey = #{modelkey,jdbcType=VARCHAR},
+      deploystate = #{deploystate,jdbcType=CHAR}
+    where id = #{id,jdbcType=INTEGER}
+      and tenantId = #{tenantId,jdbcType=VARCHAR}
+  </update>
+  <delete id="deleteById" parameterType="java.util.Map" >
+    delete from meta_tenant
+    where id = #{id,jdbcType=INTEGER}
+      and tenantId = #{tenantId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByIds" parameterType="java.util.Map" >
+    delete from meta_tenant where tenantId = #{tenantId,jdbcType=BIGINT} AND id IN 
+    <foreach collection="list" item="item" index="index" open="(" separator="," close=")" > 
+        #{item}
+    </foreach>
+  </delete>
+  <delete id="deleteByConditions" parameterType="java.util.Map" >
+    delete from meta_tenant
+    <where >
+      <include refid="conditionSql" />
+    </where>
+  </delete>
+  <select id="getById" resultMap="BaseResultMap" parameterType="java.util.Map" >
+     select * from meta_tenant
+    where id = #{id,jdbcType=INTEGER}
+      and tenantId = #{tenantId,jdbcType=VARCHAR}
+  </select>
+  <select id="getByIds" resultMap="BaseResultMap" parameterType="java.util.Map" >
+     select * from meta_tenant where tenantId = #{tenantId,jdbcType=BIGINT} AND  id IN 
+    <foreach collection="list" item="item" index="index" open="(" separator="," close=")" > 
+        #{item}
+    </foreach>
+  </select>
+  <select id="getPage" resultMap="BaseResultMap" parameterType="java.util.Map" >
+    select * from meta_tenant
+    <where >
+      <include refid="conditionSql" />
+    </where>
+     order by ${sort} ${dir}  
+  </select>
+  <select id="getByMap" resultMap="BaseResultMap" parameterType="java.util.Map" >
+    select * from meta_tenant
+    <where >
+      <include refid="conditionSql" />
+    </where>
+     order by ${sort} ${dir}  
+  </select>
+  <sql id="conditionSql" >
+    <if test="tenantId != null and  tenantId != '' " >
+        and tenantId = #{tenantId} 
+    </if>
+    <if test="metaid != null and  metaid != '' " >
+        and metaid = #{metaid} 
+    </if>
+    <if test="modelname != null and  modelname != '' " >
+        and modelname = #{modelname} 
+    </if>
+    <if test="singler != null and  singler != '' " >
+        and singler = #{singler} 
+    </if>
+    <if test="singletype != null and  singletype != '' " >
+        and singletype = #{singletype} 
+    </if>
+    <if test="createtime != null and  createtime != '' " >
+        and createtime = #{createtime} 
+    </if>
+    <if test="remark != null and  remark != '' " >
+        and remark = #{remark} 
+    </if>
+    <if test="modelid != null and  modelid != '' " >
+        and modelid = #{modelid} 
+    </if>
+    <if test="modelkey != null and  modelkey != '' " >
+        and modelkey = #{modelkey} 
+    </if>
+    <if test="deploystate != null and  deploystate != '' " >
+        and deploystate = #{deploystate} 
+    </if>
+     <if test="id != null and  id != '' " >
+        and id = #{id} 
+    </if>
+  </sql>
+</mapper>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+	<localRepository>D://Repository</localRepository>
+
+	<pluginGroups>
+		<pluginGroup>org.mortbay.jetty</pluginGroup>
+		<pluginGroup>org.codehaus.mojo</pluginGroup>
+	</pluginGroups>
+
+	<profiles>
+		<profile>  
+			<id>nexus</id>  
+			<repositories>  
+				<repository>  
+					<id>nexus</id>  
+					<name>local private nexus</name>
+					<url>http://repo.3g2win.com:8081/content/groups/public</url>  
+				</repository>  
+			</repositories>  
+			<pluginRepositories>  
+				<pluginRepository>  
+					<id>nexus</id>  
+					<url>http://repo.3g2win.com:8081/content/repositories/local</url>  
+					<releases><enabled>true</enabled></releases>  
+					<snapshots><enabled>true</enabled></snapshots>  
+				</pluginRepository>  
+			</pluginRepositories>  
+		</profile>  
+		<profile>
+			<id>nexus-snapshots</id>
+			<repositories>
+				<repository>
+					<id>nexus-snapshots</id>
+					<name>local private nexus snapshots</name>
+					<url>http://repo.3g2win.com:8081/content/repositories/snapshots/</url>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>force</updatePolicy>
+					</snapshots>  
+				</repository>
+			</repositories>
+		</profile>
+	</profiles>
+
+	<activeProfiles>  
+		<activeProfile>nexus</activeProfile>  
+		<activeProfile>nexus-snapshots</activeProfile>
+	</activeProfiles>  
+
+	<!-- deploy到仓库时用到的用户名/密码-->
+	<servers>  
+        <server>  
+            <id>nexus-releases</id>  
+            <username>admin</username>  
+            <password>admin123</password>  
+        </server>  
+        <server>  
+            <id>nexus-snapshots</id>  
+            <username>admin</username>  
+            <password>admin123</password>  
+        </server>  
+    </servers>  
+
+</settings>

@@ -1,0 +1,71 @@
+10
+
+dir
+41642
+http://svn.3g2win.com/svn/appdo/appcan_4.0/emm/trunk/appdo-web-flow
+http://svn.3g2win.com/svn/appdo
+
+
+
+2015-11-26T06:33:30.400542Z
+41642
+xingshen.zhao
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+942de7de-16d0-4a6e-ba26-731a43b108fe
+
+.externalToolBuilders
+dir
+
+doc
+dir
+
+pom.xml
+file
+
+
+
+
+2015-11-25T01:16:22.241000Z
+2d5e441378eeec4ac019169e52c5eb58
+2015-11-25T01:18:08.553994Z
+41403
+xingshen.zhao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10482
+
+src
+dir
+

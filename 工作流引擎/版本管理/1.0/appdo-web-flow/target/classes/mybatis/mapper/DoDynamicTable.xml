@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="DoDynamicTable">
+	<!-- 2015年11月9日 10:29:36 ypp -->
+	<!-- 动态表操作配置文件 创建表 删除表 插入表信息 更新表等操作 -->
+	<!-- 创建表 -->
+	<update id="createTableSql" parameterType="java.util.Map">
+		${sql}
+	</update>
+	<!-- 插入表数据 -->
+	<insert id="insertTable" parameterType="java.util.Map">
+		${sql}
+	</insert>
+	<!-- 删除表数据 -->
+	<delete id="deleteTable" parameterType="java.util.Map">
+		${sql}
+	</delete>
+	<!-- 更新表数据 增加列 删除列 修改字段大小等处理 -->
+	<update id="updateTable" parameterType="java.util.Map">
+		${sql}
+	</update>
+
+</mapper>
